@@ -1,0 +1,62 @@
+set relativenumber
+set number
+
+" Identation
+
+set ai "Auto indent
+set si "Smart indent
+set nowrap
+
+set backspace=indent,eol,start
+
+set autoindent
+
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set whichwrap+=<,>,h,l
+
+
+" Set ruler
+set ruler
+set colorcolumn=80,100
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+
+
+" Set X lines to the cursor - when moving vertically using j/k
+set so=11
+
+" Searching
+" ignore case
+set ignorecase
+" Try to be smart when searching
+set smartcase
+" Highligh results
+set hlsearch
+"
+set incsearch
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
+" HIGHLIGHTS
+
+" Show trailing whitespace:
+
+set background=dark
+
+set encoding=utf8
+
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+

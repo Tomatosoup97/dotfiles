@@ -1,51 +1,141 @@
-" .vimrc
+execute pathogen#infect()
+
+filetype plugin indent on
+
+set relativenumber
+set number
+
+syntax on
+syntax enable
+
+" Identation
+
+set ai "Auto indent
+set si "Smart indent
+set nowrap
+
+set backspace=indent,eol,start
+
+set autoindent
+
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set whichwrap+=<,>,h,l
+
+
+" Set ruler
+set ruler
+set colorcolumn=80,100
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" Aliases
+command NT NERDTree
+command UT UndotreeToggle
+
+" UndoTree config
+
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/
+
+" set history=500
+
+" Set X lines to the cursor - when moving vertically using j/k
+set so=11
+
+" Searching
+" ignore case
+set ignorecase
+" Try to be smart when searching
+set smartcase
+" Highligh results
+set hlsearch
 "
-" Maintained by Claud D. Park <posquit0.bj@gmail.com>
-" http://www.posquit0.com/
+set incsearch
 
-""" General Configuration (excepting visual.vim)
-if filereadable(expand("\~/.vim/general.vim"))
-  source \~/.vim/general.vim
-endif
-if filereadable(expand("\~/.vim/key-mapping.vim"))
-  source \~/.vim/key-mapping.vim
-endif
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
 
 
-""" Plugin Configuration
-" All the vim plugins are managed by 'vim-plug'
-" List & configuration of plugins separated to two file 'plugins.vim',
-" 'plugins.after.vim'.
-" It makes this vimrc could also work out-of-box even if not managed by
-" dotfiles.
-if filereadable(expand("\~/.vim/plugins.vim"))
-  source \~/.vim/plugins.vim
+" HIGHLIGHTS
+
+" Show trailing whitespace:
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
 endif
 
-""" General Configuration - Visual
-if filereadable(expand("\~/.vim/visual.vim"))
-  source \~/.vim/visual.vim
-endif
 
-""" Plugin Configuration after loading plug
-if filereadable(expand("\~/.vim/plugins.after.vim"))
-  source \~/.vim/plugins.after.vim
-endif
+" Theme
+colorscheme gruvbox
 
-""" Override Configuration (because of plugins.vim)
-if filereadable(expand("\~/.vim/override.vim"))
-  source \~/.vim/override.vim
-endif
+set background=dark
 
-""" GUI Specific Configuration
-if has('gui_running')
-  if filereadable(expand("\~/.vim/gvim.vim"))
-    source \~/.vim/gvim.vim
-  endif
-endif
+set encoding=utf8
 
-""" Local Specific Configuration
-" Use local vimrc if available
-if filereadable(expand("\~/.vimrc.local"))
-  source \~/.vimrc.local
-endif
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+
+" Syntastic settings
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+" Lightline settings
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '>', 'right': '<' },
+      \ 'subseparator': { 'left': '>', 'right': '<' }
+      \ }
+
+" ccrypt config
+augroup CPT
+  au!
+  au BufReadPre *.cpt set bin
+  au BufReadPre *.cpt set viminfo=
+  au BufReadPre *.cpt set noswapfile
+  au BufReadPost *.cpt let $vimpass = inputsecret("Password: ")
+  au BufReadPost *.cpt silent '[,']!ccrypt -cb -E vimpass
+  au BufReadPost *.cpt set nobin
+  au BufWritePre *.cpt set bin
+  au BufWritePre *.cpt silent! '[,']!ccrypt -e -E vimpass
+  au BufWritePost *.cpt silent! u
+  au BufWritePost *.cpt set nobin
+augroup END
+

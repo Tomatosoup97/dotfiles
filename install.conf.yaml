@@ -32,6 +32,9 @@
     ~/.vimrc:
       force: true
       path: vim/.vimrc
+    ~/.portable_vimrc:
+      force: true
+      path: vim/.portable_vimrc
     ~/.zsh:
       force: true
       path: zsh
