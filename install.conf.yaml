@@ -50,15 +50,13 @@
     ~/.Xresources:
       force: true
       path: X/.Xresources
-    ~/.Xresources.d:
+    ~/.config/i3/config:
       force: true
-      path: X/.Xresources.d/
-    ~/.Xmodmap:
+      path: X/.config/i3/config
+    ~/startup.sh:
       force: true
-      path: X/.Xmodmap
-    ~/.config/i3lock:
-      force: true
-      path: X/.config/i3lock/
+      path: startup.sh
+
 
 - shell:
   - tmux start-server
