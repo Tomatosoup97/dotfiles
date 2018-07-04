@@ -43,7 +43,7 @@
       path: zsh/zshenv
     ~/.zshrc:
       force: true
-      path: zsh/zshrc
+      path: .zshrc
     ~/.xinitrc:
       relink: true
       path: X/.xinitrc
