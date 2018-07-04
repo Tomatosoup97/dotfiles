@@ -1,93 +1,121 @@
-# vim: set ft=gitconfig:
-# .gitconfig
-#
-# Maintained by Claud D. Park <posquit0.bj@gmail.com>
-# http://www.posquit0.com/
-
-
-[include]
-  # include external gitconfig file (requires git 1.7.10+)
-  # typically, user.name and user.email is configured.
-  path = ~/.gitconfig.local
-[push]
-  # push should only push current branch, not all branches
-  default = current
-[help]
-  autocorrect = 1
+[user]
+    name = Mateusz Urbańczyk
+    email = murbanczyk@qed.ai
 
 [core]
-	editor = vim
-[merge]
-  tool = vimdiff
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
-[format]
-  pretty = fuller
 [color]
-  ui = auto
-  interactive = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green 
-[color "diff"]
-  commit = green bold
-  meta = green bold
-  frag = green bold
-  func = green
-  plain = yellow
-  old = red
-  new = cyan
+    ui = auto
+
+#[color "branch"]
+#	current = yellow bold
+#	local = green bold
+#	remote = cyan bold
+#[color "diff"]
+#	meta = yellow bold
+#	frag = magenta bold
+#	old = red bold
+#	new = green bold
+#	whitespace = red reverse
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+
+    added = green
+    changed = red
+    untracked = magenta
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+
+[github]
+	user = Tomatosoup97
 
 [alias]
-  ls      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  last    = log -1 HEAD
-  today   = log --since=midnight --color --graph \
+    a = add
+    aa = add --all
+    au = add -u
+
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    bD = branch -D
+
+
+    ; cleanup = "!git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+    ci = commit -v
+    ca = commit --amend
+    cae = commit --allow-empty
+
+    co = checkout
+    cb = checkout -b
+    com = checkout master
+
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    cpa = cherry-pick --abort
+
+    d = diff
+    ds = diff --cached
+    dt = difftool
+
+    l = log --oneline --graph
+    lr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+
+    today   = log --since=midnight --color --graph \
             --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
             --abbrev-commit
-  yesterday = log --since yesterday --until=midnight --color --graph \
-            --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
-            --abbrev-commit
-  history = log --graph --pretty=format:'%C(yellow)%h%Creset \
-            -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' \
-            --abbrev-commit --date=short --date-order -n30
+    yesterday = log --since yesterday --until=midnight --color --graph \
+              --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
+              --abbrev-commit
 
-  remotes = remote -v
-  df      = diff
+    pl = pull
+    plom = pull origin master
+    plum = pull upstream master
+    prom = pull --rebase origin master
 
-  branches = branch -a
-  unstage = reset HEAD --
-  discard = checkout --
-  co      = checkout
-  com     = checkout master
+    po = push origin
+    pom = push origin master
 
-  amend   = commit --amend
-  ca      = commit --amend
-  cm      = commit -m
+    rb = rebase
+    rbm = rebase master
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbi = rebase --interactive
+    rbs = rebase --skip
 
-  s       = status --short --branch
-  st      = status
-  sta     = status --short --branch --untracked-files=normal
+    un = reset HEAD
 
-  sync    = !git pull && git push
-  ta      = tag -a
-  tags    = tag -l
+    r = remote -v
 
-# allows: git clone github:rails/rails
-[url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-  insteadOf = "github:"
-[url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
-[url "git@heroku.com:"]
-  insteadOf = "heroku:"
+    rH = reset HEAD
+    rha = reset --hard
+    rso = reset --soft
+
+    rev = review master
+    rd = review -d
+    resetwithorigin = reset --hard origin/master
+
+    rmc = rm --cached
+
+    s = status
+
+    st = stash
+    sta = stash apply
+    stc = stash clear
+    std = stash drop
+    stl = stash list
+    stp = stash pop
+    sts = stash save
+    stw = stash show
+    submodule-recursive = submodule update --init --recursive
+
+    initial-commit = rev-list --max-parents=0 HEAD
+    howmany = shortlog -sn
+    howmanytotal = rev-list --count master
+    howmanylines = log --author="Mateusz Urbańczyk" --pretty=tformat: --numstat | gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
+
