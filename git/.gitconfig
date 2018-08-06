@@ -79,6 +79,9 @@
     prom = pull --rebase origin master
 
     po = push origin
+    pof = push origin -f
+    poh = push origin HEAD
+    pohf = push origin HEAD -f
     pom = push origin master
 
     rb = rebase
