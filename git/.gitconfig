@@ -1,6 +1,6 @@
 [user]
     name = Mateusz Urbańczyk
-    email = murbanczyk@qed.ai
+    email = mu@qed.ai
 
 [core]
     editor = vim
@@ -74,6 +74,7 @@
               --abbrev-commit
 
     pl = pull
+    plo = pull origin
     plom = pull origin master
     plum = pull upstream master
     prom = pull --rebase origin master
