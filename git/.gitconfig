@@ -1,6 +1,6 @@
 [user]
     name = Mateusz Urbańczyk
-    email = mu@qed.ai
+    email = mateusz.urbanczyk@intel.com
 
 [core]
     editor = vim
@@ -48,6 +48,7 @@
     ; cleanup = "!git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
     ci = commit -v
     ca = commit --amend
+    can = commit --amend --no-edit
     cae = commit --allow-empty
 
     co = checkout
