@@ -99,6 +99,18 @@ alias sbl="subl"
 alias t="tree"
 alias open="xdg-open"
 alias god_damn_remove="shred --zero --remove --verbose"
+alias vi=vim
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage\|state\|time to"'
+alias pycharm='pycharm.sh & disown'
+alias bl='xbacklight'
+alias bls='xbacklight -set'
+alias bli='xbacklight -inc 10'
+alias bld='xbacklight -dec 10'
+
+# zsh competion
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 
 export VISUAL=vim
 export EDITOR=vim
@@ -111,6 +123,7 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
+export MIMIKER_SRC_PATH="/home/mat/repos/mimiker"
 source /usr/bin/virtualenvwrapper.sh
 
 # export SSH_AUTH_SOCK=/var/run/user/1000/gnupg/S.gpg-agent.ssh
@@ -128,4 +141,8 @@ source /usr/bin/virtualenvwrapper.sh
 # export PATH="/usr/local/share/chromedriver:$PATH"
 # export PATH="/home/mat/.gem/ruby/2.4.0/bin:$PATH"
 # export PATH="/home/mat/Programs/pycharm-2017.2.4/bin:/home/mat/Programs/clion-2017.2.3/bin:$PATH"
+export PATH="/usr/local/pycharm-2018.2.3/bin:$PATH"
+export PATH="/snap/bin:$PATH"
 
+# opam configuration
+test -r /home/mat/.opam/opam-init/init.zsh && . /home/mat/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
