@@ -56,6 +56,10 @@
     ~/startup.sh:
       force: true
       path: startup.sh
+    ~/.conkyrc:
+      force: true
+      path: conky/.conkyrc
+
 
 
 - shell:
