@@ -1,4 +1,4 @@
-xrandr --output eDP1 --primary --auto --output HDMI1 --off
+xrandr --output eDP-1 --primary --auto --output HDMI-1 --off
 sh ~/.fehbg
 pkill conky
 conky

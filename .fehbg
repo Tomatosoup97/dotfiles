@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-center --image-bg 'black' --geometry -0 '/home/mu/Pictures/redhat-wallpaper.jpg'

@@ -21,6 +21,12 @@
     ~/.vimrc:
       force: true
       path: vim/.vimrc
+    ~/.fehbg:
+      force: true
+      path: .fehbg
+    ~/Pictures/redhat-wallpaper.jpg:
+      force: true
+      path: redhat-wallpaper.jpg
     ~/.portable_vimrc:
       force: true
       path: vim/.portable_vimrc
@@ -58,3 +64,4 @@
     stdin: true
     stdout: true
     stderr: true
+  - initial_setup
