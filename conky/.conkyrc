@@ -48,7 +48,7 @@ conky.config = {
     --minimum_height = 5,
 	--minimum_width = 0,
     net_avg_samples = 4,
-    --no_buffers = true,
+    no_buffers = true,
 	--nvidia_display = ,
     --out_to_console = false,
 	--out_to_http = false,
@@ -163,10 +163,10 @@ ${color3}${downspeedgraph wlan0 32,250 00ffff 00ff00}
 ${endif}\
 ${color grey}DiskIO: $diskio \
 $hr
- ${color #996633}/dev/sda\
- ${goto 160}${color #99ff00}${diskio_read sda}\
+ ${color #996633}/dev/nvme0n1\
+ ${goto 160}${color #99ff00}${diskio_read nvme0n1}\
  ${goto 242}${color #99ff00}R|${color #ff3300}|W\
- ${goto 320}${color #ff3300}${diskio_write sda}
+ ${goto 320}${color #ff3300}${diskio_write nvme0n1}
 ${color #88cc00}${diskiograph_read 30,250 00ff00 ffff00} \
 ${color #88cc00}${diskiograph_write 30,250 00ff00 ffff00}
 \

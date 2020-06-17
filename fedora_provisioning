@@ -27,6 +27,9 @@ sudo dnf install -y ack
 # Dev packages
 sudo dnf install -y @development-tools
 
+# Python
+sudo dnf install -y python-pip
+
 # Docker
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager \
@@ -38,6 +41,7 @@ sudo systemctl enable docker
 
 sudo groupadd docker
 sudo usermod -aG docker mu
+
 
 echo "Please log out to apply changes. i3-msg exit, assumig i3 is already installed"
 echo ""
@@ -51,3 +55,6 @@ echo "https://github.com/toggl/toggldesktop#linux"
 echo ""
 echo "Install Slack"
 echo "https://slack.com/intl/en-pl/downloads/linux"
+echo ""
+echo "Install docker compose"
+echo "https://docs.docker.com/compose/install/#install-compose-on-linux-systems"
