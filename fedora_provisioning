@@ -15,6 +15,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # Spotify
 sudo flatpak install flathub com.spotify.Client
 
+# i3
+sudo dnf install -y i3 i3status dmenu i3lock xbacklight feh conky
+
 # Tmux
 sudo dnf install -y tmux
 
@@ -24,6 +27,20 @@ sudo dnf install -y ack
 # Dev packages
 sudo dnf install -y @development-tools
 
+# Docker
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager \
+    --add-repo \
+    https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+
+sudo groupadd docker
+sudo usermod -aG docker mu
+
+echo "Please log out to apply changes. i3-msg exit, assumig i3 is already installed"
+echo ""
 echo "WARNING: Manual steps required to finish machine provisioning!"
 echo ""
 echo "Install Iosevka font"
@@ -31,3 +48,6 @@ echo "https://github.com/be5invis/Iosevka"
 echo ""
 echo "Install Toggl"
 echo "https://github.com/toggl/toggldesktop#linux"
+echo ""
+echo "Install Slack"
+echo "https://slack.com/intl/en-pl/downloads/linux"
