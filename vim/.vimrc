@@ -158,8 +158,8 @@ endif
 
 
 " Theme
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 
 set background=dark
@@ -167,7 +167,6 @@ set background=dark
 set encoding=utf8
 
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
 
 " Syntastic settings
 

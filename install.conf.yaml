@@ -24,9 +24,6 @@
     ~/.portable_vimrc:
       force: true
       path: vim/.portable_vimrc
-    ~/.zsh:
-      force: true
-      path: zsh
     ~/.zshrc:
       force: true
       path: .zshrc
@@ -45,9 +42,9 @@
     ~/.conkyrc:
       force: true
       path: conky/.conkyrc
-    ~/.vim/bundle/Vundle.vim/:
+    ~/.vim/bundle/Vundle.vim:
       force: true
-      path: vundle
+      path: Vundle.vim
 
 - shell:
   -
