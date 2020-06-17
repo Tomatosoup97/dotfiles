@@ -2,6 +2,7 @@
 
 set -e
 
+BIN_FILES_LOCATION=/usr/local/bin
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="tools/dotbot"
 
@@ -12,3 +13,6 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+sudo cp scripts/* $BIN_FILES_LOCATION
+sudo chown -R root:root $BIN_FILES_LOCATION

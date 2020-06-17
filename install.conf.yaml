@@ -18,17 +18,6 @@
     ~/.gitconfig:
       force: true
       path: git/.gitconfig
-    ~/.gitconfig.local: git/.gitconfig.local
-    ~/.irssi: irssi/.irssi
-    ~/.tmux:
-      force: true
-      path: tmux
-    ~/.tmux.conf:
-      force: true
-      path: tmux/tmux.conf
-    ~/.vim:
-      force: true
-      path: vim/.vim/
     ~/.vimrc:
       force: true
       path: vim/.vimrc
@@ -38,9 +27,6 @@
     ~/.zsh:
       force: true
       path: zsh
-    ~/.zshenv:
-      force: true
-      path: zsh/zshenv
     ~/.zshrc:
       force: true
       path: .zshrc
@@ -53,31 +39,19 @@
     ~/.config/i3/config:
       force: true
       path: X/.config/i3/config
-    ~/startup.sh:
-      force: true
-      path: startup.sh
     ~/.conkyrc:
       force: true
       path: conky/.conkyrc
-
-
+    ~/.conkyrc:
+      force: true
+      path: conky/.conkyrc
+    ~/.vim/bundle/Vundle.vim/:
+      force: true
+      path: vundle
 
 - shell:
-  - tmux start-server
-  - tmux new-session -d
-  -
-    command: [~/.tmux/plugins/tpm/scripts/install_plugins.sh, Installing TMUX plugins]
-    stdout: true
-    stderr: true
-  - tmux kill-server
   -
     command: [vim +PlugInstall +qall now, Installing Vim plugins]
     stdin: true
     stdout: true
     stderr: true
-  -
-    command: [~/.tools/fonts/install.sh, Installing fonts(Powerline, Nerd and more)]
-    stdin: true
-    stdout: true
-    stderr: true
-

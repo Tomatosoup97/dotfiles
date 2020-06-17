@@ -1,0 +1,5 @@
+xrandr --output eDP1 --primary --auto --output HDMI1 --left-of eDP1 --mode 1920x1080
+sh ~/.fehbg
+pkill conky
+conky
+

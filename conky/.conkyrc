@@ -44,9 +44,9 @@ conky.config = {
 	if_up_strictness = 'link',
 	--max_text_width = 0,
 	--max_user_text = 16384,
-	--maximum_width = ,
+	--maximum_width = 5000,
     --minimum_height = 5,
-	--minimum_width = 5,
+	--minimum_width = 0,
     net_avg_samples = 4,
     --no_buffers = true,
 	--nvidia_display = ,
@@ -73,8 +73,8 @@ conky.config = {
 	--top_name_verbose = true,
 	--top_name_width = 15,
 	--total_run_times = 0,
-    update_interval = 2,
-	update_interval_on_battery = 2,
+    update_interval = 3,
+	update_interval_on_battery = 3,
     use_spacer = 'none',
     use_xft = true
 }
@@ -180,10 +180,6 @@ ${color1}/home ${alignr 300}\
  ${color0}${fs_used /home} /\
  ${color0}${fs_size /home} \
  ${color0}${fs_bar 6 /home}
-${color1}/extra  ${alignr 300}\
- ${color0}${fs_used /extra} /\
- ${color0}${fs_size /extra} \
- ${color0}${fs_bar 6 /extra}
 ${color1}/tmp  ${alignr 300}\
  ${color0}${fs_used /tmp} /\
  ${color0}${fs_size /tmp} \
@@ -195,17 +191,27 @@ ${color grey}Processes:$color $processes  \
 ${color grey}Running:$color $running_processes \
 	${sysname} ${kernel}
 \
-${color yellow}Highest CPU   ${alignr 150 } PID	  CPU%    MEM%
+${color yellow}Highest CPU   ${alignr 150 } PID	  CPU%    MEM
 ${color0} ${top name 1} ${alignr 150 } ${top pid 1} ${top cpu 1}	${top mem_res 1}
-${color0} ${top name 2} ${alignr 150 } ${top pid 2} ${top cpu 1}	${top mem_res 2}
-${color0} ${top name 3} ${alignr 150 } ${top pid 3} ${top cpu 1}	${top mem_res 3}
-${color0} ${top name 4} ${alignr 150 } ${top pid 4} ${top cpu 1}	${top mem_res 4}
-${color0} ${top name 5} ${alignr 150 } ${top pid 5} ${top cpu 1}	${top mem_res 5}
-${color green}Highest MEM   ${alignr 150 } PID	  CPU%    MEM%
+${color0} ${top name 2} ${alignr 150 } ${top pid 2} ${top cpu 2}	${top mem_res 2}
+${color0} ${top name 3} ${alignr 150 } ${top pid 3} ${top cpu 3}	${top mem_res 3}
+${color0} ${top name 4} ${alignr 150 } ${top pid 4} ${top cpu 4}	${top mem_res 4}
+${color0} ${top name 5} ${alignr 150 } ${top pid 5} ${top cpu 5}	${top mem_res 5}
+${color0} ${top name 6} ${alignr 150 } ${top pid 6} ${top cpu 6}	${top mem_res 6}
+${color0} ${top name 7} ${alignr 150 } ${top pid 7} ${top cpu 7}	${top mem_res 7}
+${color0} ${top name 8} ${alignr 150 } ${top pid 8} ${top cpu 8}	${top mem_res 8}
+${color0} ${top name 9} ${alignr 150 } ${top pid 9} ${top cpu 9}	${top mem_res 9}
+${color0} ${top name 10} ${alignr 150 } ${top pid 10} ${top cpu 10}	${top mem_res 10}
+${color green}Highest MEM   ${alignr 150 } PID	  CPU%    MEM
 ${color0} ${top_mem name 1} ${alignr 150 } ${top_mem pid 1} ${top_mem cpu 1}	${top_mem mem_res 1}
-${color0} ${top_mem name 2} ${alignr 150 } ${top_mem pid 2} ${top_mem cpu 1}	${top_mem mem_res 2}
-${color0} ${top_mem name 3} ${alignr 150 } ${top_mem pid 3} ${top_mem cpu 1}	${top_mem mem_res 3}
-${color0} ${top_mem name 4} ${alignr 150 } ${top_mem pid 4} ${top_mem cpu 1}	${top_mem mem_res 4}
-${color0} ${top_mem name 5} ${alignr 150 } ${top_mem pid 5} ${top_mem cpu 1}	${top_mem mem_res 5}
+${color0} ${top_mem name 2} ${alignr 150 } ${top_mem pid 2} ${top_mem cpu 2}	${top_mem mem_res 2}
+${color0} ${top_mem name 3} ${alignr 150 } ${top_mem pid 3} ${top_mem cpu 3}	${top_mem mem_res 3}
+${color0} ${top_mem name 4} ${alignr 150 } ${top_mem pid 4} ${top_mem cpu 4}	${top_mem mem_res 4}
+${color0} ${top_mem name 5} ${alignr 150 } ${top_mem pid 5} ${top_mem cpu 5}	${top_mem mem_res 5}
+${color0} ${top_mem name 6} ${alignr 150 } ${top_mem pid 6} ${top_mem cpu 6}	${top_mem mem_res 6}
+${color0} ${top_mem name 7} ${alignr 150 } ${top_mem pid 7} ${top_mem cpu 7}	${top_mem mem_res 7}
+${color0} ${top_mem name 8} ${alignr 150 } ${top_mem pid 8} ${top_mem cpu 8}	${top_mem mem_res 8}
+${color0} ${top_mem name 9} ${alignr 150 } ${top_mem pid 9} ${top_mem cpu 9}	${top_mem mem_res 9}
+${color0} ${top_mem name 10} ${alignr 150 } ${top_mem pid 10} ${top_mem cpu 10}	${top_mem mem_res 10}
 ]]
 

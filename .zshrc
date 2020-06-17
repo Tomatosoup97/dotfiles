@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/mat/.oh-my-zsh
+export ZSH=/home/mu/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -101,16 +101,20 @@ alias open="xdg-open"
 alias god_damn_remove="shred --zero --remove --verbose"
 alias vi=vim
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "percentage\|state\|time to"'
-alias pycharm='pycharm.sh & disown'
 alias bl='xbacklight'
 alias bls='xbacklight -set'
+alias blmax='xbacklight -set 100'
 alias bli='xbacklight -inc 10'
 alias bld='xbacklight -dec 10'
+alias signal='flatpak run org.signal.Signal/x86_64/stable'
+alias path="readlink -f"
 
 # zsh competion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
 export VISUAL=vim
 export EDITOR=vim
@@ -121,10 +125,12 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . ~/.oh-my-zsh/z/z.sh
 
 
+export MIMIKER_SRC_PATH="/home/mu/repos/mimiker"
+
+# Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-export MIMIKER_SRC_PATH="/home/mat/repos/mimiker"
-source /usr/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
 # export SSH_AUTH_SOCK=/var/run/user/1000/gnupg/S.gpg-agent.ssh
 
@@ -139,10 +145,49 @@ source /usr/bin/virtualenvwrapper.sh
 
 # export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # export PATH="/usr/local/share/chromedriver:$PATH"
-# export PATH="/home/mat/.gem/ruby/2.4.0/bin:$PATH"
-# export PATH="/home/mat/Programs/pycharm-2017.2.4/bin:/home/mat/Programs/clion-2017.2.3/bin:$PATH"
+# export PATH="/home/mu/.gem/ruby/2.4.0/bin:$PATH"
+# export PATH="/home/mu/Programs/pycharm-2017.2.4/bin:/home/mu/Programs/clion-2017.2.3/bin:$PATH"
 export PATH="/usr/local/pycharm-2018.2.3/bin:$PATH"
 export PATH="/snap/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
+export PATH="~/.local/bin/scripts:$PATH"
+export PATH="~/.cargo/bin:$PATH"
+export PATH="/home/mu/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+# export PATH="/home/mu/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+ii-hosts() {
+  echo "lab110-{01..10}, lab110-{11..20}, lab137-{01..19}"
+}
 
 # opam configuration
-test -r /home/mat/.opam/opam-init/init.zsh && . /home/mat/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+test -r /home/mu/.opam/opam-init/init.zsh && . /home/mu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+
+# User specific aliases and functions
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/mu/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+# TODO: toggle the line below to activate conda
+#    \eval "$__conda_setup"
+else
+    if [ -f "/home/mu/anaconda3/etc/profile.d/conda.sh" ]; then
+# . "/home/mu/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/mu/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
