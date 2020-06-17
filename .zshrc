@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo ssh-agent)
+plugins=(git sudo ssh-agent zsh-z zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,8 +121,8 @@ export EDITOR=vim
 
 PROMPT='${ret_status} %{$fg[red]%}%~%{$reset_color%} $(git_prompt_info)'
 
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. ~/.oh-my-zsh/z/z.sh
+# source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# . ~/.oh-my-zsh/z/z.sh
 
 
 export MIMIKER_SRC_PATH="/home/mu/repos/mimiker"

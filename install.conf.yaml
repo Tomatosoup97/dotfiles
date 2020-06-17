@@ -45,6 +45,12 @@
     ~/.vim/bundle/Vundle.vim:
       force: true
       path: Vundle.vim
+    ~/.oh-my-zsh/plugins/zsh-syntax-highlighting:
+      force: true
+      path: zsh/zsh-syntax-highlighting
+    ~/.oh-my-zsh/plugins/zsh-z:
+      force: true
+      path: zsh/zsh-z
 
 - shell:
   -
