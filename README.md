@@ -7,7 +7,7 @@
 </div>
 
 <p align="center">
-  Not only dotfiles but also machine provisioning
+  Dotfiles managemet and local machine provisioning
 </p>
 
 <div align="center">
@@ -29,4 +29,10 @@
 $ git clone https://github.com/Tomatosoup97/dotfiles ~/dotfiles
 $ cd ~/dotfiles
 $ ./install
+```
+
+## Provisioning local Fedora machine
+
+```bash
+$ ./fedora_provisioning
 ```
