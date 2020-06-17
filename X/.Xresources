@@ -13,10 +13,18 @@ Xft.lcdfilter: lcddefault
 *faceName: Fixed
 *faceSize: 11
 
+URxvt.perl-ext-common: ...,font-size
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
 
-urxvt.font:             xft:Iosevka:pixelsize=18
-*.font:                 xft:Iosevka:pixelsize=18
+!urxvt.font:             xft:Iosevka:pixelsize=18
+URxvt.font:                 xft:Iosevka:pixelsize=18
+
 !urxvt.font:            xft:DejaVu Sans Mono:pixelsize=14
 !urxvt.font:            xft:NotoMono:pixelsize=14
 !urxvt.font:            xft:Monospace:pixelsize=14
+
+*.font:                 xft:Iosevka:pixelsize=30
+!*background: #ffffff
+!*foreground: #000000
 

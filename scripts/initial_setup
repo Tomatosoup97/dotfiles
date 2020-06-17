@@ -1,0 +1,6 @@
+#!/bin/bash
+~/.fehbg
+xrandr_setup_one
+conky
+setxkbmap -layout us -variant altgr-intl -option compose:menu,ctrl:nocaps
+setxkbmap pl

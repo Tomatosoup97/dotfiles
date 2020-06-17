@@ -1,0 +1,19 @@
+# Make sure hard-drive is mounted where we expect it to be. You
+# may want to change sdb1 to your backup disk label
+sudo umount /dev/sdb1
+sudo mount /dev/sdb1 /media/backup
+
+# -a archive mode (enables recursion)
+# -A preserve ACLS (access control list)
+# -X preserve extended attributes
+# -v verbose mode
+# --delete synchronize disks 1:1
+rsync -aAXv --delete --exclude={
+"/dev/*","/proc/*",\
+"/sys/*","/tmp/*",\
+"/run/*","/mnt/*",\
+"/media/*","/lost+found",\
+"/home/*/.thumbnails/*","*/node_modules/*",\
+"/home/*/.cache/*","/home/*/.local/share/Trash/*",\
+"/home/mat/.PlayOnLinux"} / /media/backup/SYS_BACKUP
+

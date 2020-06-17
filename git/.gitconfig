@@ -1,6 +1,6 @@
 [user]
     name = Mateusz Urbańczyk
-    email = mateusz.urbanczyk@intel.com
+    email = mu@qed.ai
 
 [core]
     editor = vim
@@ -26,10 +26,14 @@
     untracked = magenta
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
 [difftool]
-	prompt = false
+    prompt = false
+
+[merge]
+    tool = vimdiff
+    prompt = false
 
 [github]
 	user = Tomatosoup97
@@ -77,14 +81,17 @@
     pl = pull
     plo = pull origin
     plom = pull origin master
+    ploh = pull origin HEAD
     plum = pull upstream master
     prom = pull --rebase origin master
+    prum = pull --rebase upstream master
 
     po = push origin
     pof = push origin -f
     poh = push origin HEAD
     pohf = push origin HEAD -f
     pom = push origin master
+    pomf = push origin master -f
 
     rb = rebase
     rbm = rebase master
@@ -92,6 +99,10 @@
     rbc = rebase --continue
     rbi = rebase --interactive
     rbs = rebase --skip
+
+    f = fetch
+    fo = fetch origin
+    fu = fetch upstream
 
     un = reset HEAD
 
