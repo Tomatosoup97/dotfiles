@@ -1,0 +1,33 @@
+#!/bin/bash
+sudo dnf install -y fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install -y google-chrome-stable
+
+sudo dnf install -y redshift
+sudo dnf install -y keepassxc
+
+sudo dnf install -y zsh
+
+# Flatpak
+sudo dnf install -y flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Spotify
+sudo flatpak install flathub com.spotify.Client
+
+# Tmux
+sudo dnf install -y tmux
+
+# ack
+sudo dnf install -y ack
+
+# Dev packages
+sudo dnf install -y @development-tools
+
+echo "WARNING: Manual steps required to finish machine provisioning!"
+echo ""
+echo "Install Iosevka font"
+echo "https://github.com/be5invis/Iosevka"
+echo ""
+echo "Install Toggl"
+echo "https://github.com/toggl/toggldesktop#linux"

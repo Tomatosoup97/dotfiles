@@ -65,3 +65,4 @@
     stdout: true
     stderr: true
   - initial_setup
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
