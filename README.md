@@ -3,11 +3,11 @@
     <img alt="posquit0's dotfiles" src="https://raw.githubusercontent.com/posquit0/dotfiles/master/icon.png" width="128px" />
   </a>
   <br />
-  <h1>posquit0's dotfiles</h1>
+  <h1>Tomatosoup's dotfiles</h1>
 </div>
 
 <p align="center">
-  dotfiles for super nerds written by posquit0
+  Not only dotfiles but also machine provisioning
 </p>
 
 <div align="center">
@@ -21,43 +21,12 @@
 
 <br />
 
-**This dotfiles** contains awesome configurations for CLI commands and X environments, along with powerfully customized Vim, Zsh and Tmux environments for nerds.
-
-<div align="center">
-  <img alt="screenshot" src="https://raw.githubusercontent.com/posquit0/i/master/dotfiles/screenshot.png" width="85%" />
-</div>
-
-<br />
-
-As the size of dotfiles is bigger, I decided to manage the dotfiles of **Vim, Zsh and TMUX** as submodules. You can check below links if you only want those configurations.
-
-- [posquit0's vimrc](https://github.com/posquit0/vimrc)
-- [posquit0's zshrc](https://github.com/posquit0/zshrc)
-- [posquit0's tmux-conf](https://github.com/posquit0/tmux-conf)
-
+**This dotfiles** contains configurations for CLI commands and X environments, along with customized Vim, Zsh and Tmux environments.
 
 ## Usage
 
 ```bash
-$ git clone https://github.com/posquit0/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
+$ git clone https://github.com/Tomatosoup97/dotfiles ~/dotfiles
+$ cd ~/dotfiles
 $ ./install
 ```
-
-### Dependencies
-
-- [**Git**](https://git-scm.com/): my dotfiles is managed using `git`
-
-
-## Contact
-
-You are free to take my dotfiles and modify it to create your own.
-
-If you have any questions, feel free to join me at [`#posquit0` on Freenode](irc://irc.freenode.net/posquit0) and ask away. Click [here](https://kiwiirc.com/client/irc.freenode.net/posquit0) to connect.
-
-Good luck!
-
-
-## License
-
-[MIT](https://github.com/posquit0/dofiles/blob/master/LICENSE) © [Byungjin Park](http://www.posquit0.com)
