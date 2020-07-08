@@ -32,6 +32,16 @@ sudo dnf install -y @development-tools
 
 # Python
 sudo dnf install -y python-pip
+sudo dnf install -y python3-virtualenv
+sudo pip install -r requirements.txt
+sudo dnf install -y python-devel
+
+# Git
+sudo dnf install -y git-review
+
+# Gimp
+
+sudo dnf install -y gimp
 
 # Docker
 sudo dnf -y install dnf-plugins-core
@@ -44,6 +54,17 @@ sudo systemctl enable docker
 
 sudo groupadd docker
 sudo usermod -aG docker mu
+
+# Subl
+
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+sudo dnf install sublime-text
+
+
+# xclip
+
+sudo dnf install -y xclip
 
 
 echo "Please log out to apply changes. i3-msg exit, assumig i3 is already installed"
