@@ -10,6 +10,10 @@
     command: [git submodule update --init --recursive --quiet, Installing submodules]
     stdout: true
     stderr: true
+  -
+    command: [mkdir -p ~/.urxvt/ext/]
+    stdout: true
+    stderr: true
 
 - link:
     ~/.tools:
@@ -60,6 +64,9 @@
     ~/.oh-my-zsh/plugins/zsh-z:
       force: true
       path: zsh/zsh-z
+    ~/.urxvt/ext/font-size:
+      force: true
+      path: font-size
 
 - shell:
   -
