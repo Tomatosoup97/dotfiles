@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+./linux_repos.sh
+./dev.sh
+./toolbox.sh
+
+./docker.sh
+./latex.sh
+./apps.sh
+
+./packages.sh
+
+./next_steps.sh
