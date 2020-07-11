@@ -125,8 +125,8 @@ call NERDTreeHighlightFile('py', 'lightgreen', 'none', 'lightgreen', '#151515')
 
 
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%80v.\+/
+highlight OverLength ctermbg=Brown ctermfg=white guibg=#ba8888
+match OverLength /\%89v.\+/
 
 " set history=500
 

@@ -21,6 +21,9 @@
     ~/.vimrc:
       force: true
       path: vim/.vimrc
+    ~/.ideavimrc:
+      force: true
+      path: vim/.ideavimrc
     ~/.fehbg:
       force: true
       path: .fehbg
@@ -66,4 +69,4 @@
     stderr: true
   - initial_setup
   # - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # - ./fedora_provisioning
+  # - ./provision/fedora_provisioning
