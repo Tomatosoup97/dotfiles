@@ -28,6 +28,9 @@
 [diff]
     tool = vimdiff
 
+[pull]
+  ff = only
+
 [difftool]
     prompt = false
 

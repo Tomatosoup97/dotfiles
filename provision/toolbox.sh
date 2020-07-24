@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-
 # i3
 sudo dnf install -y i3 i3status dmenu i3lock xbacklight feh conky
 
@@ -25,3 +24,6 @@ sudo dnf install -y xclip
 
 # Redshift
 sudo dnf install -y redshift
+
+# ccrypt
+sudo dnf install -y ccrypt

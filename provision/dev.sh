@@ -11,6 +11,7 @@ sudo dnf install -y @development-tools
 
 # Git
 sudo dnf install -y git-review
+sudo dnf install -y tig
 
 # Subl
 sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg

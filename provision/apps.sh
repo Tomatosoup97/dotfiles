@@ -13,3 +13,6 @@ sudo dnf install -y gimp
 # Google Chrome
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install -y google-chrome-stable
+
+# Transmission
+sudo dnf install transmission-gtk
