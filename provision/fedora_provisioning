@@ -13,4 +13,8 @@ set -e
 
 ./packages.sh
 
+# Thinkpad only
+# ./thinkpad.sh
+
 ./next_steps.sh
+
