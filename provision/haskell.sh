@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-sudo dnf install haskell-platform
+sudo dnf install -y haskell-platform

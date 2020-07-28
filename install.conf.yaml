@@ -14,6 +14,7 @@
     command: [mkdir -p ~/.urxvt/ext/]
     stdout: true
     stderr: true
+  - [./provision/fedora_provisioning, Provisioning machine]
 
 - link:
     ~/.tools:
@@ -76,4 +77,3 @@
     stderr: true
   - initial_setup
   # - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # - ./provision/fedora_provisioning
