@@ -27,3 +27,6 @@ sudo dnf install -y redshift
 
 # ccrypt
 sudo dnf install -y ccrypt
+
+# Utils such as chsh (change default shell)
+sudo dnf install -y util-linux-user

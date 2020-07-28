@@ -1,7 +1,7 @@
 - clean: ['~']
 
 - shell:
-  - [sleep 0, Installing Posquit0's dotfiles]
+  - [sleep 0, Installing dotfiles]
   -
     command: [git pull, Updating dotfiles]
     stdout: true
@@ -11,10 +11,19 @@
     stdout: true
     stderr: true
   -
-    command: [mkdir -p ~/.urxvt/ext/]
+    command: [mkdir -p ~/.urxvt/ext/; mkdir -p ~/.config/i3]
     stdout: true
     stderr: true
-  - [./provision/fedora_provisioning, Provisioning machine]
+  #  - [./provision/fedora_provisioning, Provisioning machine]
+  #  - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing zsh]
+  - [chsh -s $(which zsh), Making zsh default shell]
+  -
+    command: [mkdir -p ~/.vim/bundle]
+    stdout: true
+    stderr: true
+  - [sudo cp scripts/* /usr/local/bin, "Distributing custom scripts"]
+  - [sudo ln -sf ~/dotfiles/xorg.conf /etc/X11/xorg.conf, Backlight property]
+  - [sh -c "sudo ln -fs ~/dotfiles/spotify /usr/local/bin/spotify", Link spotify]
 
 - link:
     ~/.tools:

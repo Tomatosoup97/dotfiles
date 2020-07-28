@@ -131,7 +131,8 @@ export MIMIKER_SRC_PATH="/home/mu/repos/mimiker"
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source ~/.local/bin/virtualenvwrapper.sh
+# source ~/.local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 # export SSH_AUTH_SOCK=/var/run/user/1000/gnupg/S.gpg-agent.ssh
 
