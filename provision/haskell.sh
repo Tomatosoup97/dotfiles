@@ -2,3 +2,4 @@
 set -e
 
 sudo dnf install -y haskell-platform
+cabal update
