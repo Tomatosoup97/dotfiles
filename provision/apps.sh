@@ -16,3 +16,6 @@ sudo dnf install -y google-chrome-stable
 
 # Transmission
 sudo dnf install transmission-gtk
+
+# Calibre
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin

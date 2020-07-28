@@ -3,6 +3,7 @@ set -e
 
 ./linux_repos.sh
 ./dev.sh
+./haskell.sh
 ./toolbox.sh
 
 ./docker.sh
