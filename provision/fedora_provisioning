@@ -9,6 +9,7 @@ set -e
 ./docker.sh
 ./latex.sh
 ./apps.sh
+./battery.sh
 
 ./packages.sh
 
