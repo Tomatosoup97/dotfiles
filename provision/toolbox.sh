@@ -30,3 +30,12 @@ sudo dnf install -y ccrypt
 
 # Utils such as chsh (change default shell)
 sudo dnf install -y util-linux-user
+
+# ls hardware
+sudo dnf install -y lshw
+
+# audio control
+sudo dnf install -y pavucontrol
+
+# htop
+sudo dnf install -y htop
