@@ -23,7 +23,6 @@
     stderr: true
   - [sudo cp scripts/* /usr/local/bin, "Distributing custom scripts"]
   - [sudo ln -sf ~/dotfiles/xorg.conf /etc/X11/xorg.conf, Backlight property]
-  - [sh -c "sudo ln -fs ~/dotfiles/spotify /usr/local/bin/spotify", Link spotify]
 
 - link:
     ~/.tools:

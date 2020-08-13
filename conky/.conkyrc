@@ -104,13 +104,9 @@ ${alignr 40}${color #00ff00}RAM: $memperc% = $mem / $memmax
 ${color #88cc00}${cpugraph 60,250 00ff00 ff0000} \
 ${color #88cc00}${memgraph 60,250 00ff00 ff0000}
 ${color6}CPU 1 : $color1${cpu cpu1}% ${goto 100}${cpubar cpu1 12,150}  \
-${color6}CPU 5 : ${alignr 5}$color1${cpu cpu5}% ${cpubar cpu5 12,150}
+${color6}CPU 3 : ${alignr 5}$color1${cpu cpu3}% ${cpubar cpu3 12,150}
 ${color6}CPU 2 : $color1${cpu cpu2}% ${goto 100}${cpubar cpu2 12,150}  \
-${color6}CPU 6 : ${alignr 5}$color1${cpu cpu6}% ${cpubar cpu6 12,150}
-${color6}CPU 3 : $color1${cpu cpu3}% ${goto 100}${cpubar cpu3 12,150}  \
-${color6}CPU 7 : ${alignr 5}$color1${cpu cpu7}% ${cpubar cpu7 12,150}
-${color6}CPU 4 : $color1${cpu cpu4}% ${goto 100}${cpubar cpu4 12,150}  \
-${color6}CPU 8 : ${alignr 5}$color1${cpu cpu8}% ${cpubar cpu8 12,150}
+${color6}CPU 4 : ${alignr 5}$color1${cpu cpu4}% ${cpubar cpu4 12,150}
 ${color #88cc00}Swap Usage: $swapperc% = $swap/$swapmax \
 ${color #88cc00} ${swapbar 4 00ff00 ff0000}
 \
