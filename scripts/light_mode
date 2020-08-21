@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+cat ~/.Xresources \
+    | sed "s/^\!\*background: #ffffff/\*background: #ffffff/" \
+    | sed "s/^\!\*foreground: #000000/\*foreground: #000000/" \
+    > /tmp/.Xresources
+mv /tmp/.Xresources ~/dotfiles/X/.Xresources
+
+xrdb -merge ~/.Xresources
+
+cat ~/.vimrc \
+    | sed "s/^\" set background=light/set background=light/" \
+    > /tmp/.vimrc
+mv /tmp/.vimrc ~/dotfiles/vim/.vimrc
