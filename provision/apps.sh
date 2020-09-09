@@ -19,3 +19,6 @@ sudo dnf install transmission-gtk
 
 # Calibre
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# VLC
+sudo dnf install -y vlc
