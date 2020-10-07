@@ -4,6 +4,7 @@ set -e
 ./linux_repos.sh
 ./dev.sh
 ./haskell.sh
+./ocaml.sh
 ./toolbox.sh
 
 ./docker.sh
