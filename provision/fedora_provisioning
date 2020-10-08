@@ -5,6 +5,7 @@ set -e
 ./dev.sh
 ./haskell.sh
 ./ocaml.sh
+./coq.sh
 ./toolbox.sh
 
 ./docker.sh
