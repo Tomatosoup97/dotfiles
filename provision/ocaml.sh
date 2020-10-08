@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Install package manager
 sudo dnf install -y opam
