@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# Install package manager
 sudo dnf install -y opam
-# opam init
-# eval $(opam env)
-# opam switch create 4.11.1
+opam init
+eval $(opam env)
 
-# which ocaml
-# ocaml -version
+# Install OCaml
+opam switch create 4.11.1
+
+# Install REPL
+opam install -y utop
