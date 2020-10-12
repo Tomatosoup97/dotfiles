@@ -9,6 +9,7 @@ set -e
 ./toolbox.sh
 
 ./docker.sh
+./virtualization.sh
 ./latex.sh
 ./apps.sh
 ./battery.sh
