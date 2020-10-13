@@ -10,3 +10,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 # RPM Fusion
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+
+# Snap
+sudo dnf install -y snapd
+sudo ln -s /var/lib/snapd/snap /snap
