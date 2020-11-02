@@ -39,3 +39,6 @@ sudo dnf install -y pavucontrol
 
 # htop
 sudo dnf install -y htop
+
+# jq
+sudo dnf install -y jq
