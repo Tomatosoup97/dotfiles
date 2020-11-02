@@ -14,3 +14,6 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 # Snap
 sudo dnf install -y snapd
 sudo ln -s /var/lib/snapd/snap /snap
+
+# System upgrade manager
+sudo dnf install -y dnf-plugin-system-upgrade
