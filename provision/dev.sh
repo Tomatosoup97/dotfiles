@@ -25,3 +25,6 @@ apm install vim-mode-plus
 
 # Toggl
 flatpak install -y flathub com.toggl.TogglDesktop
+
+# Required when compiling python using pyenv
+sudo dnf install -y openssl-devel
