@@ -28,3 +28,7 @@ flatpak install -y flathub com.toggl.TogglDesktop
 
 # Required when compiling python using pyenv
 sudo dnf install -y openssl-devel
+
+# LLVM
+# sudo dnf install -y llvm10-devel llvm10-static python-lit
+# pip install --user llvmlite
