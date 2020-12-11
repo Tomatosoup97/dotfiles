@@ -11,7 +11,7 @@ set -e
 ./docker.sh
 ./virtualization.sh
 # If needed
-# ./postgres.sh
+./databases.sh
 ./latex.sh
 ./apps.sh
 ./battery.sh
