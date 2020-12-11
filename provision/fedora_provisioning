@@ -10,6 +10,8 @@ set -e
 
 ./docker.sh
 ./virtualization.sh
+# If needed
+# ./postgres.sh
 ./latex.sh
 ./apps.sh
 ./battery.sh
