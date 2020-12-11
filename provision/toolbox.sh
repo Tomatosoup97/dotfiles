@@ -42,3 +42,6 @@ sudo dnf install -y htop
 
 # jq
 sudo dnf install -y jq
+
+# Fedora Media Writer
+sudo dnf install -y mediawriter
