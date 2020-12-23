@@ -3,6 +3,7 @@ set -e
 
 ./linux_repos.sh
 ./dev.sh
+./python.sh
 ./haskell.sh
 ./ocaml.sh
 ./coq.sh
@@ -22,4 +23,3 @@ set -e
 # ./thinkpad.sh
 
 ./next_steps.sh
-

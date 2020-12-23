@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
 
-sudo dnf install -y python-pip
-sudo dnf install -y python3-virtualenv
-sudo pip install -r requirements.txt
-sudo dnf install -y python-devel
-
 # Dev packages
 sudo dnf install -y @development-tools
 
@@ -25,9 +20,6 @@ apm install vim-mode-plus
 
 # Toggl
 flatpak install -y flathub com.toggl.TogglDesktop
-
-# Required when compiling python using pyenv
-sudo dnf install -y openssl-devel
 
 # LLVM
 # sudo dnf install -y llvm10-devel llvm10-static python-lit
