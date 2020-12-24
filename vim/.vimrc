@@ -43,7 +43,16 @@ set number
 syntax on
 syntax enable
 
+" *** BEGIN Autoread ***
+
+" See https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 set autoread
+" Trigger autoread on buffer change or terminal focus
+au FocusGained,BufEnter * :checktime
+" Trigger autoread when cursor stops moving
+au CursorHold,CursorHoldI * checktime
+
+" *** END Autoread ***
 
 " Identation
 
@@ -69,7 +78,8 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+" execute :checktime to trigger file reload (see autoread section)
+nnoremap <silent> <C-l> :nohl<CR><C-l> \| :checktime<CR>
 
 " Aliases
 command NT NERDTree
