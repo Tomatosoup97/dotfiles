@@ -17,3 +17,7 @@ sudo ln -s /var/lib/snapd/snap /snap
 
 # System upgrade manager
 sudo dnf install -y dnf-plugin-system-upgrade
+
+
+# Distribute repos
+sudo cp repos/* /etc/yum.repos.d/

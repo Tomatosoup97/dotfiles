@@ -17,6 +17,7 @@ set -e
 ./latex.sh
 ./apps.sh
 ./battery.sh
+# ./gcloud.sh
 
 ./packages.sh
 
