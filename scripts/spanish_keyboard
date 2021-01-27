@@ -1,0 +1,2 @@
+#!/bin/bash
+setxkbmap -layout es,us -variant altgr-intl -option compose:menu,ctrl:nocaps
