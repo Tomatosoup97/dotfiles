@@ -81,6 +81,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " execute :checktime to trigger file reload (see autoread section)
 nnoremap <silent> <C-l> :nohl<CR><C-l> \| :checktime<CR>
 
+" <Ctrl-o> evens selected text to 80 lines
+noremap <C-o> <S-j>k \| ::norm gww<CR>
+
 " Aliases
 command NT NERDTree
 command UT UndotreeToggle
