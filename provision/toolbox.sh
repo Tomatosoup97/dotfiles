@@ -45,3 +45,6 @@ sudo dnf install -y jq
 
 # Fedora Media Writer
 sudo dnf install -y mediawriter
+
+# vifm
+sudo dnf install -y vifm

@@ -11,7 +11,7 @@
     stdout: true
     stderr: true
   -
-    command: [mkdir -p ~/.urxvt/ext/; mkdir -p ~/.config/i3]
+    command: [mkdir -p ~/.urxvt/ext/; mkdir -p ~/.config/i3; mkdir -p ~/.vifm]
     stdout: true
     stderr: true
   #  - [./provision/fedora_provisioning, Provisioning machine]
@@ -34,6 +34,9 @@
     ~/.vimrc:
       force: true
       path: vim/.vimrc
+    ~/.vifm/vifmrc:
+      force: true
+      path: vim/vifmrc
     ~/.ideavimrc:
       force: true
       path: vim/.ideavimrc
