@@ -24,3 +24,7 @@ flatpak install -y flathub com.toggl.TogglDesktop
 # LLVM
 # sudo dnf install -y llvm10-devel llvm10-static python-lit
 # pip install --user llvmlite
+
+# Terraform
+sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+sudo dnf install -y terraform

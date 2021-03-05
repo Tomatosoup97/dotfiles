@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Core plugins
+sudo dnf -y install dnf-plugins-core
+
 # Repos
 sudo dnf install -y fedora-workstation-repositories
 
