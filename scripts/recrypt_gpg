@@ -1,0 +1,36 @@
+#!/bin/bash
+FILENAME=$1
+QED_DEVOPS_REPO_DIR=~/QED/devops
+RECIPIENTS_PUB_KEYS_DIR=$QED_DEVOPS_REPO_DIR/public_gpg_keys
+
+set -e
+
+usage="Recrypts gpg file based on acl list
+
+Usage:
+
+    recrypt_gpg <filename>
+
+    assumed acl path:   <filename>.gpg.acl
+    output path:        <filename>.gpg
+
+Options:
+    -h, --help    Show this help text.
+    --dry-run     Display commands to execute and exit"
+
+if [ "$2" == "--dry-run" ]; then
+    CMD=echo
+else
+    CMD="sh -c"
+fi
+
+if [ "$#" -lt 1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+  echo "$usage"
+  exit 0;
+else
+    for recipient in $(cat $FILENAME.gpg.acl); do
+        RECIPIENTS_ARGS="${RECIPIENTS_ARGS} --recipient-file $RECIPIENTS_PUB_KEYS_DIR/${recipient}.gpg.pub"
+    done;
+
+    $CMD "gpg --output "${FILENAME}.gpg" --encrypt $RECIPIENTS_ARGS ${FILENAME}"
+fi
