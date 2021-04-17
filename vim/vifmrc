@@ -159,6 +159,11 @@ command! reload :write | restart full
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+
+" Coq
+filetype {*.v}
+        \ coqide %f &
+
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
 filextype {*.pdf},<application/pdf> xdg-open %f &

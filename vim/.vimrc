@@ -24,6 +24,7 @@ Plugin 'mbbill/undotree'
 Plugin 'chrisbra/csv.vim'
 Plugin 'codota/tabnine-vim'
 Plugin 'vifm/vifm.vim'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -39,11 +40,16 @@ filetype plugin indent on    " required
 
 " **** END Vundle ****
 
+let mapleader = ","
+
 set relativenumber
 set number
 
 syntax on
 syntax enable
+
+" allows to easily find files using :find
+set path=,.**
 
 " *** BEGIN Autoread ***
 
@@ -110,8 +116,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Window size
-let g:NERDTreeWinSize=25
+" Sidebar window size
+let g:NERDTreeWinSize=33
 
 " -------
 
