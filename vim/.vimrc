@@ -25,6 +25,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'codota/tabnine-vim'
 Plugin 'vifm/vifm.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -178,10 +179,13 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
+set guifont=Iosevka\ 22
+
 
 " Theme
 " set background=dark
-" colorscheme solarized
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 
 set background=dark
 " set background=light

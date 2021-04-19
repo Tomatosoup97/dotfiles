@@ -53,3 +53,11 @@ sudo dnf install -y vifm
 sudo dnf install -y  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install -y unrar
+
+# vim-anywhere
+sudo dnf install -y vim-X11
+
+GIT_VERSION=2c9da7181b6f199afb6ab52e841d5461c113b5cd
+URL=https://raw.githubusercontent.com/cknadler/vim-anywhere/$GIT_VERSION/install
+
+curl -fsSL $URL | bash
