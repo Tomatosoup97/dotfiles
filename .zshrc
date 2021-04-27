@@ -93,7 +93,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa
 
 chpwd() ls
 
-alias fm="pcmanfm"
+alias fm="nautilus"
 alias CC="clipcopy"
 alias sbl="subl"
 alias t="tree"
@@ -110,6 +110,12 @@ alias bld='xbacklight -dec 10'
 alias signal='flatpak run org.signal.Signal/x86_64/stable'
 alias path="readlink -f"
 alias gcanrev="g can && g rev"
+alias c="cal -n 3"
+alias a="ack --ignore-dir={\
+__pycache__,\
+.mypy_cache,\
+.idea\
+}"
 
 # zsh competion
 fpath=(~/.zsh/completion $fpath)
