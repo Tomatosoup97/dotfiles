@@ -58,6 +58,9 @@
     ~/.Xresources:
       force: true
       path: X/.Xresources
+    ~/.Xresources.light:
+      force: true
+      path: X/.Xresources.light
     ~/.config/i3/config:
       force: true
       path: X/.config/i3/config
