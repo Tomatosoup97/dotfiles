@@ -26,6 +26,7 @@ Plugin 'codota/tabnine-vim'
 Plugin 'vifm/vifm.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'whonore/Coqtail'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
