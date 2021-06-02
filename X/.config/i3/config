@@ -150,6 +150,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+Shift+p exec "i3lock -c 000000"
 bindsym $mod+Shift+s exec "i3lock -c 000000; systemctl suspend"
+bindsym $mod+F2 exec "pactl -- set-sink-volume 0 -10%"
+bindsym $mod+F3 exec "pactl -- set-sink-volume 0 +10%"
+bindsym $mod+F4 exec "xbacklight -dec 10"
+bindsym $mod+F5 exec "xbacklight -inc 10"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
