@@ -111,6 +111,7 @@ alias signal='flatpak run org.signal.Signal/x86_64/stable'
 alias path="readlink -f"
 alias gcanrev="g can && g rev"
 alias c="cal -3"
+alias gs="g s"
 alias a="ack --ignore-dir={\
 __pycache__,\
 .mypy_cache,\

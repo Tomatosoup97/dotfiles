@@ -115,8 +115,9 @@
     rha = reset --hard
     rso = reset --soft
 
-    rev = review master
+    rev = review --reviewers mu
     rd = review -d
+    rl = review --list
     resetwithorigin = reset --hard origin/master
 
     rmc = rm --cached
