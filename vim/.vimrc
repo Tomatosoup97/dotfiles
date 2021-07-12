@@ -27,6 +27,8 @@ Plugin 'vifm/vifm.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'whonore/Coqtail'
+Plugin 'vim-python/python-syntax'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -296,3 +298,7 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 " ## end of OPAM user-setup addition for vim / base ## keep this line
 "
 let g:jedi#use_tabs_not_buffers = 1
+
+let g:python_highlight_all = 1
+let g:python_highlight_func_calls = 0
+
