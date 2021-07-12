@@ -61,3 +61,6 @@ GIT_VERSION=2c9da7181b6f199afb6ab52e841d5461c113b5cd
 URL=https://raw.githubusercontent.com/cknadler/vim-anywhere/$GIT_VERSION/install
 
 curl -fsSL $URL | bash
+
+# neofetch
+sudo dnf install -y neofetch
