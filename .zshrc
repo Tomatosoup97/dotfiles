@@ -112,10 +112,13 @@ alias path="readlink -f"
 alias gcanrev="g can && g rev"
 alias c="cal -3"
 alias gs="g s"
+alias ga="g a ."
 alias a="ack --ignore-dir={\
 __pycache__,\
 .mypy_cache,\
-.idea\
+.idea,\
+dist,\
+coverage\
 }"
 
 # zsh competion
@@ -157,6 +160,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # export PATH="/usr/local/share/chromedriver:$PATH"
 # export PATH="/home/mu/.gem/ruby/2.4.0/bin:$PATH"
 # export PATH="/home/mu/Programs/pycharm-2017.2.4/bin:/home/mu/Programs/clion-2017.2.3/bin:$PATH"
+# export PATH="/home/mu/Programs/pycharm-2021.2/bin:$PATH"
 export PATH="/usr/local/pycharm-2018.2.3/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
