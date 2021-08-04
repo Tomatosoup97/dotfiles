@@ -31,9 +31,12 @@ URxvt.font:                 xft:Iosevka:pixelsize=18
 ! Gruvbox light color scheme for terminal
 ! -----------------------------------------------------------------------------
 
-! hard contrast: *background: #f9f5d7
-*background: #fbf1c7
-! soft contrast: *background: #f2e5bc
+! hard contrast:
+*background: #f9f5d7
+! medium contract:
+!*background: #fbf1c7
+! soft contrast:
+!*background: #f2e5bc
 *foreground: #3c3836
 ! Black + DarkGrey
 *color0:  #fdf4c1
@@ -54,7 +57,8 @@ URxvt.font:                 xft:Iosevka:pixelsize=18
 *color5:  #b16286
 *color13: #8f3f71
 ! DarkCyan + Cyan
-*color6:  #689d6a
+!*color6:  #689d6a
+*color6:  #000000
 *color14: #427b58
 ! LightGrey + White
 *color7:  #7c6f64

@@ -92,6 +92,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 " execute :checktime to trigger file reload (see autoread section)
 nnoremap <silent> <C-l> :nohl<CR><C-l> \| :checktime<CR>
+nnoremap <silent> <C-p> :colorscheme gruvbox<CR>
 
 " <Ctrl-o> evens selected text to 80 lines
 noremap <C-o> <S-j>k \| ::norm gww<CR>
@@ -189,6 +190,7 @@ set guifont=Iosevka\ 22
 " set background=dark
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
+let g:gruvbox_contrast_light = 'hard'
 
 set background=dark
 " set background=light

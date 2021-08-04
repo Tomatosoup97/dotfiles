@@ -1,11 +1,15 @@
 #!/bin/bash
 set -e
 
-cat ~/.Xresources \
-    | sed "s/^\*background: #ffffff/\!\*background: #ffffff/" \
-    | sed "s/^\*foreground: #000000/\!\*foreground: #000000/" \
-    > /tmp/.Xresources
-mv /tmp/.Xresources ~/dotfiles/X/.Xresources
+# cat ~/.Xresources \
+#     | sed "s/^\*background: #ffffff/\!\*background: #ffffff/" \
+#     | sed "s/^\*foreground: #000000/\!\*foreground: #000000/" \
+#     > /tmp/.Xresources
+# mv /tmp/.Xresources ~/dotfiles/X/.Xresources
+
+rm ~/.Xresources
+ln -s /home/mu/dotfiles/X/.Xresources ~/.Xresources
+
 
 xrdb -merge ~/.Xresources
 
