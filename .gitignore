@@ -19,3 +19,5 @@ Thumbs.db
 .Trashes
 
 *.sw[o-p]
+
+*.kdbx
