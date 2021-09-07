@@ -19,7 +19,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mg979/vim-visual-multi'
 Plugin 'mbbill/undotree'
 Plugin 'chrisbra/csv.vim'
 Plugin 'codota/tabnine-vim'
@@ -151,8 +151,6 @@ call NERDTreeHighlightFile('py', 'lightgreen', 'none', 'lightgreen', '#151515')
 
 highlight OverLength ctermbg=Brown ctermfg=white guibg=#ba8888
 match OverLength /\%89v.\+/
-
-" set history=500
 
 " Set X lines to the cursor - when moving vertically using j/k
 set so=12
@@ -304,3 +302,4 @@ let g:jedi#use_tabs_not_buffers = 1
 let g:python_highlight_all = 1
 let g:python_highlight_func_calls = 0
 
+colorscheme gruvbox

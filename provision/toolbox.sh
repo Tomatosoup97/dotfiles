@@ -64,3 +64,9 @@ curl -fsSL $URL | bash
 
 # neofetch
 sudo dnf install -y neofetch
+
+# fzf
+sudo dnf install -y fzf ripgrep
+
+# ag
+sudo dnf install -y the_silver_searcher

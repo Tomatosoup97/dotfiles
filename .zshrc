@@ -99,7 +99,8 @@ alias sbl="subl"
 alias t="tree"
 alias open="xdg-open"
 alias god_damn_remove="shred --zero --remove --verbose"
-alias vi=vim
+alias vi=nvim
+alias vim=nvim
 alias battery0='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias battery1='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias bl='xbacklight'
@@ -113,13 +114,14 @@ alias gcanrev="g can && g rev"
 alias c="cal -3"
 alias gs="g s"
 alias ga="g a ."
-alias a="ack --ignore-dir={\
-__pycache__,\
-.mypy_cache,\
-.idea,\
-dist,\
-coverage\
-}"
+alias a="ag"
+# alias a="ack --ignore-dir={\
+# __pycache__,\
+# .mypy_cache,\
+# .idea,\
+# dist,\
+# coverage\
+# }"
 
 # zsh competion
 fpath=(~/.zsh/completion $fpath)

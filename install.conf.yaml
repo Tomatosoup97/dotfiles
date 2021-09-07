@@ -64,6 +64,9 @@
     ~/.config/i3/config:
       force: true
       path: X/.config/i3/config
+    ~/.config/nvim/init.vim:
+      force: true
+      path: vim/init.vim
     ~/.conkyrc:
       force: true
       path: conky/.conkyrc

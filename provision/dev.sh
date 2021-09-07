@@ -28,3 +28,7 @@ flatpak install -y flathub com.toggl.TogglDesktop
 # Terraform
 sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
 sudo dnf install -y terraform
+
+# Neovim
+sudo dnf copr enable pkgstore/neovim
+sudo dnf install -y neovim python3-neovim
