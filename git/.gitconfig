@@ -61,6 +61,7 @@
     co = checkout
     cb = checkout -b
     com = checkout master
+    cof = checkout --
 
     cp = cherry-pick
     cpc = cherry-pick --continue
@@ -116,6 +117,7 @@
     rso = reset --soft
 
     rev = review --reviewers mu
+    Rev = review -R --reviewers mu
     rd = review -d
     rl = review --list
     resetwithorigin = reset --hard origin/master

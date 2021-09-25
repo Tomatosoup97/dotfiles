@@ -22,3 +22,10 @@ sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | 
 
 # VLC
 sudo dnf install -y vlc
+
+# Telegram
+sudo dnf install -y telegram-desktop
+
+
+# Zulip
+sudo snap install zulip

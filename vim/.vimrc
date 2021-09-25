@@ -95,7 +95,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l> \| :checktime<CR>
 nnoremap <silent> <C-p> :colorscheme gruvbox<CR>
 
 " <Ctrl-o> evens selected text to 80 lines
-noremap <C-o> <S-j>k \| ::norm gww<CR>
+" noremap <C-o> <S-j>k \| ::norm gww<CR>
 
 " Aliases
 command NT NERDTree
@@ -187,8 +187,8 @@ set guifont=Iosevka\ 22
 " Theme
 " set background=dark
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
 let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_material_palette = 'material'
 
 set background=dark
 " set background=light
