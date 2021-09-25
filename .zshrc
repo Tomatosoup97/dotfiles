@@ -103,11 +103,11 @@ alias vi=nvim
 alias vim=nvim
 alias battery0='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 alias battery1='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
-alias bl='xbacklight'
-alias bls='xbacklight -set'
-alias blmax='xbacklight -set 100'
-alias bli='xbacklight -inc 10'
-alias bld='xbacklight -dec 10'
+alias bl='light'
+alias bls='light -S'
+alias blmax='light -S 100'
+alias bli='light -A 10'
+alias bld='light -U 10'
 alias signal='flatpak run org.signal.Signal/x86_64/stable'
 alias path="readlink -f"
 alias gcanrev="g can && g rev"
@@ -115,6 +115,7 @@ alias c="cal -3"
 alias gs="g s"
 alias ga="g a ."
 alias a="ag"
+alias ipy="ipython"
 # alias a="ack --ignore-dir={\
 # __pycache__,\
 # .mypy_cache,\
