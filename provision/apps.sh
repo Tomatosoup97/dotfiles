@@ -26,6 +26,8 @@ sudo dnf install -y vlc
 # Telegram
 sudo dnf install -y telegram-desktop
 
-
 # Zulip
 sudo snap install zulip
+
+# Wireshark
+sudo dnf install -y wireshark
