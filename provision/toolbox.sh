@@ -70,3 +70,11 @@ sudo dnf install -y fzf ripgrep
 
 # ag
 sudo dnf install -y the_silver_searcher
+
+# Rewritten in Rust
+sudo dnf install -y \
+    bat \       # cat
+    fd-find \   # find
+    exa         # ls
+
+cargo install du-dust sd

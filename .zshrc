@@ -116,6 +116,11 @@ alias gs="g s"
 alias ga="g a ."
 alias a="ag"
 alias ipy="ipython"
+alias ls="exa"
+alias l="exa -al"
+alias find=fd
+alias du=dust
+alias sed=sd
 # alias a="ack --ignore-dir={\
 # __pycache__,\
 # .mypy_cache,\
@@ -171,6 +176,7 @@ export PATH="~/.local/bin/scripts:$PATH"
 export PATH="~/.cargo/bin:$PATH"
 export PATH="/home/mu/.pyenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/home/mu/.cargo/bin:$PATH"
 
 # export PATH="/home/mu/anaconda3/bin:$PATH"  # commented out by conda initialize
 
