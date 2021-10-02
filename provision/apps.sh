@@ -31,3 +31,8 @@ sudo snap install zulip
 
 # Wireshark
 sudo dnf install -y wireshark
+
+# Anki
+# download: https://apps.ankiweb.net/
+# needed for audio:
+sudo dnf install -y mplayer mencoder
