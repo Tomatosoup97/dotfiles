@@ -118,7 +118,7 @@ alias a="ag"
 alias ipy="ipython"
 alias ls="exa"
 alias l="exa -al"
-alias find=fd
+# alias find=fd
 alias du=dust
 alias sed=sd
 # alias a="ack --ignore-dir={\
@@ -174,9 +174,10 @@ export PATH="/snap/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 export PATH="~/.local/bin/scripts:$PATH"
 export PATH="~/.cargo/bin:$PATH"
-export PATH="/home/mu/.pyenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="/home/mu/.cargo/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Anaconda3/bin/:$PATH"
 
 # export PATH="/home/mu/anaconda3/bin:$PATH"  # commented out by conda initialize
 
@@ -214,3 +215,19 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/mu/Anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/mu/Anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mu/Anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/mu/Anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
