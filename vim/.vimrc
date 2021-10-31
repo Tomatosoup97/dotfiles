@@ -28,6 +28,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'whonore/Coqtail'
 Plugin 'vim-python/python-syntax'
+Plugin 'psf/black'
 
 
 " All of your Plugins must be added before the following line
@@ -203,10 +204,19 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_cpp_checkers = ['cpplint']
+let g:syntastic_c_checkers = ['cpplint']
+let g:syntastic_cpp_cpplint_exec = '~/Anaconda3/bin/cpplint'
+
+let g:syntastic_python_checkers = ['flake8']
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"  Black
+autocmd BufWritePre *.py execute ':Black'
 
 " Markdown preview
 
