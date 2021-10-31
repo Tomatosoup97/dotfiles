@@ -78,3 +78,6 @@ sudo dnf install -y \
     exa         # ls
 
 cargo install du-dust sd
+
+# valgrind
+sudo dnf install -y valgrind
