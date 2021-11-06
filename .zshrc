@@ -108,6 +108,7 @@ alias bls='light -S'
 alias blmax='light -S 100'
 alias bli='light -A 10'
 alias bld='light -U 10'
+alias blos='sudo ddcutil setvcp 10'
 alias signal='flatpak run org.signal.Signal/x86_64/stable'
 alias path="readlink -f"
 alias gcanrev="g can && g rev"
