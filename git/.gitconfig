@@ -72,8 +72,8 @@
     dt = difftool
 
     l = log --oneline --graph
-    lr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    la = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+    lr = log --graph --pretty=format:'%C(cyan)%h%Creset %Cgreen(%cr) %C(bold blue)%<(17,trunc)<%an>%Creset %C(yellow)%d%Creset %s %Creset' --abbrev-commit
+    la = log --graph --pretty=format:'%C(cyan)%h%Creset %Cgreen(%cd) %C(bold blue)%<(17,trunc)<%an>%Creset %C(yellow)%d%Creset %s %Creset' --abbrev-commit --date=short
 
     today   = log --since=midnight --color --graph \
             --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
