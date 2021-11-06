@@ -130,7 +130,7 @@
     sta = stash apply
     stc = stash clear
     std = stash drop
-    stl = stash list
+    stl = stash list --color=always --pretty=format:'%C(yellow)%h%C(reset) - %C(bold dim yellow)(%C(magenta)%gd%C(dim yellow))%C(reset) %C(green)(%cr) %C(reset) %<(120,trunc)%s %C(reset)'
     stp = stash pop
     sts = stash save
     stw = stash show
