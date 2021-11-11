@@ -189,3 +189,9 @@ bindsym $mod+Shift+n exec vim-anywhere
 bar {
         status_command i3status
 }
+
+# Bind resizing
+bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
