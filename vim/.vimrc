@@ -29,6 +29,9 @@ Plugin 'morhetz/gruvbox'
 Plugin 'whonore/Coqtail'
 Plugin 'vim-python/python-syntax'
 Plugin 'psf/black'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bogado/file-line'
+" Plugin 'dense-analysis/ale'
 
 
 " All of your Plugins must be added before the following line
@@ -96,7 +99,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l> \| :checktime<CR>
 nnoremap <silent> <C-p> :colorscheme gruvbox<CR>
 
 " <Ctrl-o> evens selected text to 80 lines
-" noremap <C-o> <S-j>k \| ::norm gww<CR>
+noremap <C-o> <S-j>k \| ::norm gww<CR>
 
 " Aliases
 command NT NERDTree
@@ -123,7 +126,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Sidebar window size
-let g:NERDTreeWinSize=33
+let g:NERDTreeWinSize=30
 
 " -------
 
@@ -172,6 +175,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Set indent based on filetype
+autocmd FileType c,cpp,html set ts=2 sw=2 sts=2
 
 " HIGHLIGHTS
 
@@ -198,6 +203,18 @@ set encoding=utf8
 
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+" ALE settings
+"
+let b:ale_linters = ['gcc', 'clang-format', 'astyle', 'cppcheck', 'cpplint']
+" let b:ale_linters = ['gcc']
+" let g:ale_linters_explicit = 1
+
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
+" let g:ale_open_list = 1
+let g:ale_lint_on_insert_leave = 0
+
+
 " Syntastic settings
 
 set statusline+=%#warningmsg#
@@ -205,15 +222,24 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_cpp_checkers = ['cpplint']
-let g:syntastic_c_checkers = ['cpplint']
 let g:syntastic_cpp_cpplint_exec = '~/Anaconda3/bin/cpplint'
 
+" doesn't really work...
+let g:syntastic_c_checkers = ['cpplint']
+let g:syntastic_c_cpplint_exec = '~/Anaconda3/bin/cpplint'
+let g:syntastic_c_compiler_options = ' -std=c11 -Wall'
+
 let g:syntastic_python_checkers = ['flake8']
+
+" disabling noisy tex checker
+let g:syntastic_tex_checkers = []
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+
 
 "  Black
 autocmd BufWritePre *.py execute ':Black'

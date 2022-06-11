@@ -1,8 +1,12 @@
+#!/bin/bash
 # Make sure hard-drive is mounted where we expect it to be. You
 # may want to change sdb1 to your backup disk label
 sudo umount /dev/sdb1
 sudo mount /dev/sdb1 /media/backup
 
+LOCATION="/media/backup/HOME_BACKUP_FEDORA_THINKPAD_1"
+
+sudo mkdir -p $LOCATION
 # -a archive mode (enables recursion)
 # -A preserve ACLs (access control list)
 # -X preserve extended attributes
@@ -10,10 +14,11 @@ sudo mount /dev/sdb1 /media/backup
 # --delete synchronize disks 1:1
 sudo rsync -aAv \
     --exclude="*/Films" \
-    --exclude="mat/Programs" \
+    --exclude="*/Programs" \
     --exclude="*/node_modules" \
     --exclude="*/HDD" \
     --exclude="*/HOME_BACKUP" \
+    --exclude="*/Anaconda3*" \
     --exclude="*/.PyCharm*" \
     --exclude="*/.cabal" \
     --exclude="*/.cache" \
@@ -32,6 +37,7 @@ sudo rsync -aAv \
     --exclude="*/.thumbnails" \
     --exclude="*/.vols" \
     --exclude="*/.git" \
+    --exclude="*/.minecraft" \
     --exclude="*/.mypy_cache" \
     --exclude="*/*tiles*" \
     --exclude="*/*roads*" \
@@ -44,6 +50,6 @@ sudo rsync -aAv \
     --exclude="*/Visual_Paradigm_CE_15.2" \
     --exclude="*.log" \
     --exclude="*/QED/scratchpad" \
-    /home/mat /media/backup/HOME_BACKUP_FEDORA
+    /home/mu $LOCATION
 
     # --exclude='/**/.*/' \

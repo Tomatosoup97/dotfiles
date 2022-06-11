@@ -8,13 +8,12 @@ Plugin 'nvim-telescope/telescope.nvim'  " searching through lists
 " LSP
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'kabouzeid/nvim-lspinstall'
-Plugin 'glepnir/lspsaga.nvim'
 Plugin 'hrsh7th/nvim-cmp'
 Plugin 'arakashic/chromatica.nvim'
 
 " chromatica.nvim settings
 let g:chromatica#libclang_path='/usr/lib64/libclang.so'
-let g:chromatica#enable_at_startup=1
+" let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 
 " Find files using Telescope command-line sugar.
@@ -30,17 +29,3 @@ nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_stash()<cr>
 
 " Required conf for nvim-cmp
 set completeopt=menu,menuone,noselect
-
-lua << EOF
-
-require'lspinstall'.setup()
-
-local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{}
-end
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
-
-EOF

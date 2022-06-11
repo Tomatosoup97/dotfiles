@@ -64,6 +64,9 @@
     ~/.config/i3/config:
       force: true
       path: X/.config/i3/config
+    ~/.config/redshift.conf:
+      force: true
+      path: apps/redshift.conf
     ~/.config/nvim/init.vim:
       force: true
       path: vim/init.vim

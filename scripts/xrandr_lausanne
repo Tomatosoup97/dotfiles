@@ -1,0 +1,5 @@
+#!/bin/bash
+xrandr --output eDP-1 --primary --mode 1600x900 --output DP-1 --right-of eDP-1 --mode 1920x1200
+sh ~/.fehbg
+pkill conky
+conky

@@ -1,0 +1,30 @@
+#!/usr/bin/python3.8
+import datetime
+import os
+import subprocess
+import sys
+
+
+def do_call(args):
+    oneline = ['"{}"'.format(x) for x in args]
+    oneline = " ".join(oneline)
+    print("[{}]> {}".format(os.getcwd(), oneline))
+    try:
+        subprocess.check_call(args, env=os.environ)
+    except subprocess.CalledProcessError as error:
+        print(error)
+        print(error.output)
+        sys.exit(1)
+
+
+now = datetime.datetime.now()
+get_hours = lambda t: int((t - now).seconds / 3600)
+get_days = lambda t: (t - now).days
+print_delta = lambda t: f"{get_days(t)} days, {get_hours(t)} hours"
+
+SUBMIT_DEADLINE = datetime.datetime(2020, 8, 31, 12, 00)
+DEFENSE = datetime.datetime(2020, 9, 7, 12, 00)
+
+# print(f"Today: {now}")
+# print(f"Submitting in {print_delta(SUBMIT_DEADLINE)}")
+# print(f"Defense in {print_delta(DEFENSE)}")
