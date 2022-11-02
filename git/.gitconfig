@@ -5,15 +5,34 @@
 [core]
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    pager = "diff-so-fancy | less --tabs=4 -iXFR"
 
 [color]
     ui = auto
+
+[interactive]
+    diffFilter = diff-so-fancy --patch
 
 #[color "branch"]
 #	current = yellow bold
 #	local = green bold
 #	remote = cyan bold
-#[color "diff"]
+[color "diff-highlight"]
+    oldNormal = "red bold"
+    oldHighligh = "red bold 52"
+    newNormal = "green bold"
+    newHighligh = "green bold 22"
+
+[color "diff"]
+    meta = "11"
+    frag = "magenta bold"
+    func = "146 bold"
+    commit = "yellow bold"
+    old  = "red bold"
+    new  = "green bold"
+    whitespac = "red reverse"
+
+
 #	meta = yellow bold
 #	frag = magenta bold
 #	old = red bold
@@ -27,6 +46,10 @@
 
 [diff]
     tool = vimdiff
+
+[diff-so-fancy]
+    markEmptyLines = false
+    stripLeadingSymbols = true
 
 [pull]
   ff = only
@@ -71,9 +94,10 @@
     ds = diff --cached
     dt = difftool
 
-    l = log --oneline --graph
     lr = log --graph --pretty=format:'%C(cyan)%h%Creset %Cgreen(%cr) %C(bold blue)%<(17,trunc)<%an>%Creset %C(yellow)%d%Creset %s %Creset' --abbrev-commit
     la = log --graph --pretty=format:'%C(cyan)%h%Creset %Cgreen(%cd) %C(bold blue)%<(17,trunc)<%an>%Creset %C(yellow)%d%Creset %s %Creset' --abbrev-commit --date=short
+
+    l = la
 
     today   = log --since=midnight --color --graph \
             --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
@@ -116,13 +140,13 @@
     rha = reset --hard
     rso = reset --soft
 
-    rev = review --reviewers mu
-    Rev = review -R --reviewers mu
+    rev = review --reviewers murbanczyk
+    Rev = review -R --reviewers murbanczyk
     rd = review -d
     rl = review --list
     resetwithorigin = reset --hard origin/master
 
-    rmc = rm --cached
+    rmc = rm --cached -r
 
     s = status
 

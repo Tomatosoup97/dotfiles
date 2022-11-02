@@ -26,3 +26,6 @@ echo 'sudo find /sys/ -type f -iname "brightness" | grep pci'
 echo 'ln -s <intel backlight> /sys/class/backlight'
 echo ""
 echo "Run sudo powertap and see Tunables tap for better battery life"
+echo ""
+echo "Install diff-so-fancy"
+echo "https://github.com/so-fancy/diff-so-fancy"
