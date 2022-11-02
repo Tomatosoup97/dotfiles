@@ -1,6 +1,8 @@
 #!/bin/bash
 ~/.fehbg
-xrandr_setup_two
-conky
+xrandr_setup_thinkvision
+pkill pulseaudio
+pkill conky; conky
 setxkbmap -layout us -variant altgr-intl -option compose:menu,ctrl:nocaps
 setxkbmap pl
+xset mouse 3 0
