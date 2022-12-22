@@ -27,7 +27,7 @@ sudo dnf install -y vlc
 sudo dnf install -y telegram-desktop
 
 # Zulip
-sudo snap install zulip
+# sudo snap install zulip
 
 # Wireshark
 sudo dnf install -y wireshark
@@ -36,3 +36,6 @@ sudo dnf install -y wireshark
 # download: https://apps.ankiweb.net/
 # needed for audio:
 sudo dnf install -y mplayer mencoder
+
+# inkspace
+# sudo snap install inkscape

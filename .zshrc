@@ -121,7 +121,7 @@ alias ls="exa"
 alias l="exa -al"
 # alias find=fd
 alias du=dust
-alias sed=sd
+# alias sed=sd
 # alias a="ack --ignore-dir={\
 # __pycache__,\
 # .mypy_cache,\
@@ -170,6 +170,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # export PATH="/home/mu/.gem/ruby/2.4.0/bin:$PATH"
 # export PATH="/home/mu/Programs/pycharm-2017.2.4/bin:/home/mu/Programs/clion-2017.2.3/bin:$PATH"
 # export PATH="/home/mu/Programs/pycharm-2021.2/bin:$PATH"
+export PATH="/home/mu/Programs/diff-so-fancy:$PATH"
 export PATH="/usr/local/pycharm-2018.2.3/bin:$PATH"
 export PATH="/snap/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
@@ -219,16 +220,18 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mu/Anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/mu/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/mu/Anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/mu/Anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/mu/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mu/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/mu/Anaconda3/bin:$PATH"
+        export PATH="/home/mu/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+if [ -e /home/mu/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mu/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

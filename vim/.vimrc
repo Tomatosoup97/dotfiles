@@ -13,8 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
-Plugin 'preservim/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'itchyny/lightline.vim'
@@ -22,7 +20,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mg979/vim-visual-multi'
 Plugin 'mbbill/undotree'
 Plugin 'chrisbra/csv.vim'
-Plugin 'codota/tabnine-vim'
+Plugin 'codota/tabnine-vim', {'pinned': 1}
 Plugin 'vifm/vifm.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'morhetz/gruvbox'
@@ -59,6 +57,9 @@ syntax enable
 " allows to easily find files using :find
 set path=,.**
 
+" Disable mouse
+set mouse=
+
 " *** BEGIN Autoread ***
 
 " See https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -89,7 +90,7 @@ set whichwrap+=<,>,h,l
 
 " Set ruler
 set ruler
-set colorcolumn=80,89,100
+set colorcolumn=80,89
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
@@ -98,11 +99,14 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 nnoremap <silent> <C-l> :nohl<CR><C-l> \| :checktime<CR>
 nnoremap <silent> <C-p> :colorscheme gruvbox<CR>
 
+" Copying to clipboard
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
 " <Ctrl-o> evens selected text to 80 lines
-noremap <C-o> <S-j>k \| ::norm gww<CR>
+noremap <Leader>O <S-j>k \| ::norm gww<CR>
 
 " Aliases
-command NT NERDTree
 command UT UndotreeToggle
 
 " UndoTree config
@@ -116,40 +120,12 @@ endif
 " -------
 
 " Show dotfiles
-let NERDTreeShowHidden=1
-
-" Open buffor automatically when starting NT
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-" Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" let NERDTreeShowHidden=1
 
 " Sidebar window size
-let g:NERDTreeWinSize=30
+" let g:NERDTreeWinSize=30
 
 " -------
-
-" NERDTree File highlighting (https://github.com/scrooloose/nerdtree/issues/433#issuecomment-92590696)
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-call NERDTreeHighlightFile('yml', 'lightmagenta', 'none', 'lightmagenta', '#151515')
-
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('cfg', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-
-call NERDTreeHighlightFile('md', 'darkcyan', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('j2', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('js', 'lightblue', 'none', 'lightblue', '#151515')
-call NERDTreeHighlightFile('py', 'lightgreen', 'none', 'lightgreen', '#151515')
 
 
 
@@ -203,17 +179,6 @@ set encoding=utf8
 
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
-" ALE settings
-"
-let b:ale_linters = ['gcc', 'clang-format', 'astyle', 'cppcheck', 'cpplint']
-" let b:ale_linters = ['gcc']
-" let g:ale_linters_explicit = 1
-
-" let g:ale_set_loclist = 0
-" let g:ale_set_quickfix = 1
-" let g:ale_open_list = 1
-let g:ale_lint_on_insert_leave = 0
-
 
 " Syntastic settings
 
@@ -223,11 +188,6 @@ set statusline+=%*
 
 let g:syntastic_cpp_checkers = ['cpplint']
 let g:syntastic_cpp_cpplint_exec = '~/Anaconda3/bin/cpplint'
-
-" doesn't really work...
-let g:syntastic_c_checkers = ['cpplint']
-let g:syntastic_c_cpplint_exec = '~/Anaconda3/bin/cpplint'
-let g:syntastic_c_compiler_options = ' -std=c11 -Wall'
 
 let g:syntastic_python_checkers = ['flake8']
 
@@ -239,6 +199,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
+
+
+" Making errors window not too big
+" https://github.com/vim-syntastic/syntastic/issues/1678
+function! SyntasticCheckHook(errors)
+    if !empty(a:errors)
+        let g:syntastic_loc_list_height = min([len(a:errors), 8])
+    endif
+endfunction
+
 
 
 "  Black
@@ -296,40 +266,6 @@ augroup CPT
   au BufWritePost *.cpt set nobin
 augroup END
 
-" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
-let s:opam_share_dir = system("opam config var share")
-let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
-
-let s:opam_configuration = {}
-
-function! OpamConfOcpIndent()
-  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
-endfunction
-let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
-
-function! OpamConfOcpIndex()
-  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
-endfunction
-let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
-
-function! OpamConfMerlin()
-  let l:dir = s:opam_share_dir . "/merlin/vim"
-  execute "set rtp+=" . l:dir
-endfunction
-let s:opam_configuration['merlin'] = function('OpamConfMerlin')
-
-let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
-" let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
-" for tool in s:opam_packages
-"   " Respect package order (merlin should be after ocp-index)
-"   if count(s:opam_available_tools, tool) > 0
-"     call s:opam_configuration[tool]()
-"   endif
-" endfor
-
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ## end of OPAM user-setup addition for vim / base ## keep this line
 "

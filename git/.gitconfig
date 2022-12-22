@@ -97,7 +97,7 @@
     lr = log --graph --pretty=format:'%C(cyan)%h%Creset %Cgreen(%cr) %C(bold blue)%<(17,trunc)<%an>%Creset %C(yellow)%d%Creset %s %Creset' --abbrev-commit
     la = log --graph --pretty=format:'%C(cyan)%h%Creset %Cgreen(%cd) %C(bold blue)%<(17,trunc)<%an>%Creset %C(yellow)%d%Creset %s %Creset' --abbrev-commit --date=short
 
-    l = la
+    l = lr
 
     today   = log --since=midnight --color --graph \
             --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)[%an]%Creset' \
