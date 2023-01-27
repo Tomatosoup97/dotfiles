@@ -134,6 +134,8 @@ alias du=dust
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
+set bell-style none
+
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
@@ -185,6 +187,11 @@ export PATH="$HOME/Anaconda3/bin/:$PATH"
 
 ii-hosts() {
   echo "lab110-{01..10}, lab110-{11..20}, lab137-{01..19}"
+}
+
+function pdf.compress () {
+    OUT=$(basename "$1" .pdf)
+    ghostscript -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$2" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$OUT"_compressed.pdf "$1"
 }
 
 # opam configuration

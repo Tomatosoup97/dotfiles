@@ -140,8 +140,8 @@
     rha = reset --hard
     rso = reset --soft
 
-    rev = review --reviewers murbanczyk
-    Rev = review -R --reviewers murbanczyk
+    rev = review --reviewers mu@qed.ai
+    Rev = review -R --reviewers mu@qed.ai
     rd = review -d
     rl = review --list
     resetwithorigin = reset --hard origin/master

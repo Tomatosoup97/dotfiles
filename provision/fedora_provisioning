@@ -25,4 +25,7 @@ set -e
 # Thinkpad only
 # ./thinkpad.sh
 
+# QGIS
+# ./qgis.sh
+
 ./next_steps.sh
