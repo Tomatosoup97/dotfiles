@@ -1,51 +1,3 @@
-" **** BEGIN Vundle ****
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'itchyny/lightline.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mg979/vim-visual-multi'
-Plugin 'mbbill/undotree'
-Plugin 'chrisbra/csv.vim'
-Plugin 'codota/tabnine-vim', {'pinned': 1}
-Plugin 'vifm/vifm.vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'whonore/Coqtail'
-Plugin 'vim-python/python-syntax'
-Plugin 'psf/black'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bogado/file-line'
-" Plugin 'dense-analysis/ale'
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-
-" **** END Vundle ****
-
 let mapleader = ","
 
 set relativenumber
@@ -115,18 +67,6 @@ if has("persistent_undo")
     set undodir=~/.undodir/
     set undofile
 endif
-
-" NerdTree
-" -------
-
-" Show dotfiles
-" let NERDTreeShowHidden=1
-
-" Sidebar window size
-" let g:NERDTreeWinSize=30
-
-" -------
-
 
 
 highlight OverLength ctermbg=Brown ctermfg=white guibg=#ba8888
