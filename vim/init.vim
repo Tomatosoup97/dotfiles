@@ -34,7 +34,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
 
 Plug 'nvim-lua/plenary.nvim'  " module for async coroutines, required for others
-Plug 'nvim-telescope/telescope.nvim'  " searching through lists
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }  " searching through lists
+Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
@@ -60,6 +61,8 @@ let g:chromatica#libclang_path='/usr/lib64/libclang.so'
 " let g:chromatica#enable_at_startup=1
 let g:chromatica#responsive_mode=1
 
+let mapleader = ","
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
@@ -70,6 +73,14 @@ nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>fc <cmd>lua require('telescope.builtin').command_history()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
 nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_stash()<cr>
+
+lua << EOF
+    local builtin = require('telescope.builtin')
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+EOF
 
 " Spectre search&replace
 nnoremap <leader>S <cmd>lua require('spectre').open()<CR>
@@ -85,8 +96,6 @@ set completeopt=menu,menuone,noselect
 
 " Aliases
 command NT NvimTreeToggle
-
-let mapleader = ","
 
 set relativenumber
 set number
