@@ -5,20 +5,14 @@ vim.g.loaded_netrwPlugin = 1
 EOF
 
 call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
 
 " Make sure you use single quotes
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mg979/vim-visual-multi'
@@ -216,40 +210,41 @@ set encoding=utf8
 
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+" ALE settings
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'python': ['isort', 'black']}
 
-" Syntastic settings
+nmap <silent> <C-K> <Plug>(ale_previous_wrap)
+nmap <silent> <C-J> <Plug>(ale_next_wrap)
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" " Syntastic settings
 
-let g:syntastic_cpp_checkers = ['cpplint']
-let g:syntastic_cpp_cpplint_exec = '~/Anaconda3/bin/cpplint'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_cpp_checkers = ['cpplint']
+" let g:syntastic_cpp_cpplint_exec = '~/Anaconda3/bin/cpplint'
 
-" disabling noisy tex checker
-let g:syntastic_tex_checkers = []
+" let g:syntastic_python_checkers = ['flake8', 'mypy']
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
+" " disabling noisy tex checker
+" let g:syntastic_tex_checkers = []
 
-
-" Making errors window not too big
-" https://github.com/vim-syntastic/syntastic/issues/1678
-function! SyntasticCheckHook(errors)
-    if !empty(a:errors)
-        let g:syntastic_loc_list_height = min([len(a:errors), 8])
-    endif
-endfunction
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_signs = 1
 
 
-
-"  Black
-autocmd BufWritePre *.py execute ':Black'
+" " Making errors window not too big
+" " https://github.com/vim-syntastic/syntastic/issues/1678
+" function! SyntasticCheckHook(errors)
+"     if !empty(a:errors)
+"         let g:syntastic_loc_list_height = min([len(a:errors), 8])
+"     endif
+" endfunction
 
 " Markdown preview
 
@@ -264,7 +259,6 @@ let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and 
 let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
 let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
 let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
-
 
 
 " Lightline settings
