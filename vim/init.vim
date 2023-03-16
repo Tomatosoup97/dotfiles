@@ -214,6 +214,12 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'python': ['isort', 'black']}
 
+let g:ale_set_quickfix = 0
+let g:ale_set_loclist = 1
+
+" by some reason it doesn't call it on its own
+autocmd BufReadPre,FileReadPre,BufWritePre * execute ':ALEPopulateLocList'
+
 nmap <silent> <C-K> <Plug>(ale_previous_wrap)
 nmap <silent> <C-J> <Plug>(ale_next_wrap)
 
