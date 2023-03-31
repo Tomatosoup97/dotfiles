@@ -216,6 +216,7 @@ let g:ale_fixers = {'python': ['isort', 'black']}
 
 let g:ale_set_quickfix = 0
 let g:ale_set_loclist = 1
+let g:ale_list_window_size = 3
 
 " by some reason it doesn't call it on its own
 autocmd BufReadPre,FileReadPre,BufWritePre * execute ':ALEPopulateLocList'
