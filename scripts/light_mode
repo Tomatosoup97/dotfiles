@@ -16,3 +16,8 @@ cat ~/.vimrc \
     | sed "s/^\" set background=light/set background=light/" \
     > /tmp/.vimrc
 mv /tmp/.vimrc ~/dotfiles/vim/.vimrc
+
+cat ~/.config/nvim/init.vim \
+    | sed "s/^\" set background=light/set background=light/" \
+    > /tmp/.nvimrc
+mv /tmp/.nvimrc ~/dotfiles/vim/init.vim

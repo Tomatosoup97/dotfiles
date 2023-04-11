@@ -29,7 +29,7 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 URxvt.letterSpace: 0
 URxvt.lineSpace: 3
 
-# https://bbs.archlinux.org/viewtopic.php?id=282791
+! https://bbs.archlinux.org/viewtopic.php?id=282791
 URxvt.geometry: 400x400
 
 !urxvt.font:             xft:Iosevka:pixelsize=18
