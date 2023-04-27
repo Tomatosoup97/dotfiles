@@ -1,7 +1,7 @@
 #!/bin/bash
 ~/.fehbg
 xrandr_setup_thinkvision
-pkill pulseaudio
+# pkill pulseaudio
 pkill conky; conky
 setxkbmap -layout us -variant altgr-intl -option compose:menu,ctrl:nocaps
 setxkbmap pl

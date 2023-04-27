@@ -258,6 +258,10 @@ nmap <silent> <C-J> <Plug>(ale_next_wrap)
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=1
 
+" Rust
+
+let g:ale_rust_cargo_use_clippy = 1
+
 
 " haskell-vim
 
