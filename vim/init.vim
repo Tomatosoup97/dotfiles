@@ -212,11 +212,13 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 
 " ALE settings
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'python': ['isort', 'black']}
+let g:ale_fixers = {'python': ['isort', 'black'], 'rust': ['rustfmt']}
 
 let g:ale_set_quickfix = 0
 let g:ale_set_loclist = 1
 let g:ale_list_window_size = 3
+
+let g:loaded_perl_provider = 0
 
 " by some reason it doesn't call it on its own
 autocmd BufReadPre,FileReadPre,BufWritePre * execute ':ALEPopulateLocList'
