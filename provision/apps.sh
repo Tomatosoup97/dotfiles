@@ -5,7 +5,7 @@ set -e
 sudo dnf install -y keepassxc
 
 # Spotify
-sudo flatpak install -y flathub com.spotify.Client
+sudo snap install spotify
 
 # Gimp
 sudo dnf install -y gimp
