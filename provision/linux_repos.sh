@@ -20,6 +20,8 @@ sudo ln -s /var/lib/snapd/snap /snap
 
 # System upgrade manager
 sudo dnf install -y dnf-plugin-system-upgrade
+sudo dnf install -y remove-retired-packages
+sudo dnf install -y symlinks
 
 
 # Distribute repos
