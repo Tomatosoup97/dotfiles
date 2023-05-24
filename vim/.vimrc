@@ -42,7 +42,7 @@ set whichwrap+=<,>,h,l
 
 " Set ruler
 set ruler
-set colorcolumn=80,89
+set colorcolumn=89
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 

@@ -133,7 +133,7 @@ set whichwrap+=<,>,h,l
 
 " Set ruler
 set ruler
-set colorcolumn=80,89
+set colorcolumn=89
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
@@ -215,13 +215,13 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {'python': ['isort', 'black'], 'rust': ['rustfmt']}
 
 let g:ale_set_quickfix = 0
-let g:ale_set_loclist = 1
+let g:ale_set_loclist = 0
 let g:ale_list_window_size = 3
 
 let g:loaded_perl_provider = 0
 
 " by some reason it doesn't call it on its own
-autocmd BufReadPre,FileReadPre,BufWritePre * execute ':ALEPopulateLocList'
+" autocmd BufReadPre,FileReadPre,BufWritePre * execute ':ALEPopulateLocList'
 
 nmap <silent> <C-K> <Plug>(ale_previous_wrap)
 nmap <silent> <C-J> <Plug>(ale_next_wrap)
