@@ -145,6 +145,7 @@
     rd = review -d
     rl = review --list
     resetwithorigin = reset --hard origin/master
+    resetfiletomaster = checkout origin/master
 
     rmc = rm --cached -r
 
