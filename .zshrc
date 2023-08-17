@@ -75,8 +75,8 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
-export VISUAL="vim"
-export EDITOR="vim"
+export VISUAL="nvim"
+export EDITOR="nvim"
 
 zstyle :omz:plugins:ssh-agent identities id_rsa
 
@@ -139,9 +139,6 @@ set bell-style none
 
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
-
-export VISUAL=vim
-export EDITOR=vim
 
 PROMPT='${ret_status} %{$fg[red]%}%~%{$reset_color%} $(git_prompt_info)'
 
