@@ -212,7 +212,11 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 
 " ALE settings
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'python': ['isort', 'black'], 'rust': ['rustfmt']}
+let g:ale_fixers = {'python': ['isort', 'black'], 'rust': ['rustfmt'], 'sql': ['sqlfmt']}
+
+let g:ale_linters = {
+\   'tex': ['chktex -n8'],
+\}
 
 let g:ale_set_quickfix = 0
 let g:ale_set_loclist = 0
@@ -320,6 +324,13 @@ let g:python_highlight_func_calls = 0
 
 colorscheme gruvbox
 
+" Mapping for lua
+" mappings = {
+"   list = {
+"     { key = "u", action = "dir_up" },
+"   },
+" },
+
 " nvim-tree.lua
 lua << EOF
 -- set termguicolors to enable highlight groups
@@ -331,11 +342,6 @@ require("nvim-tree").setup({
   disable_netrw = true,
   view = {
     width = 32,
-    mappings = {
-      list = {
-        { key = "u", action = "dir_up" },
-      },
-    },
   },
   renderer = {
     group_empty = true,
