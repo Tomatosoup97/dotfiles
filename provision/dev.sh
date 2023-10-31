@@ -32,3 +32,6 @@ sudo dnf install -y terraform
 # Neovim
 sudo dnf copr enable pkgstore/neovim
 sudo dnf install -y neovim python3-neovim
+
+# Markdown reader (https://github.com/charmbracelet/glow)
+sudo dnf install -y glow
