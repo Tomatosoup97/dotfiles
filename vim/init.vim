@@ -12,7 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
 " Plug 'vim-syntastic/syntastic'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mg979/vim-visual-multi'
@@ -28,7 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
 
 Plug 'nvim-lua/plenary.nvim'  " module for async coroutines, required for others
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }  " searching through lists
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'neovim/nvim-lspconfig'
@@ -39,6 +39,8 @@ Plug 'windwp/nvim-spectre'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'github/copilot.vim'
+Plug 'dhananjaylatkar/cscope_maps.nvim'
+Plug 'folke/which-key.nvim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -67,6 +69,7 @@ nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>fc <cmd>lua require('telescope.builtin').command_history()<cr>
 nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
 nnoremap <leader>gs <cmd>lua require('telescope.builtin').git_stash()<cr>
+nnoremap <leader>qq <cmd>lua require('telescope.builtin').quickfix()<cr>
 
 lua << EOF
     local builtin = require('telescope.builtin')
@@ -216,6 +219,7 @@ let g:ale_fixers = {'python': ['isort', 'black'], 'rust': ['rustfmt'], 'sql': ['
 
 let g:ale_linters = {
 \   'tex': ['chktex -n8'],
+\   'c': [],
 \}
 
 let g:ale_set_quickfix = 0
@@ -315,8 +319,6 @@ augroup CPT
 augroup END
 
 
-" ## end of OPAM user-setup addition for vim / base ## keep this line
-"
 let g:jedi#use_tabs_not_buffers = 1
 
 let g:python_highlight_all = 1
@@ -347,4 +349,40 @@ require("nvim-tree").setup({
     group_empty = true,
   },
 })
+
+require("cscope_maps").setup(
+{
+  -- maps related defaults
+  disable_maps = false, -- "true" disables default keymaps
+  skip_input_prompt = true, -- "true" doesn't ask for input
+  prefix = "<leader>c", -- prefix to trigger maps
+
+  -- cscope related defaults
+  cscope = {
+    -- location of cscope db file
+    db_file = "./cscope.out",
+    -- cscope executable
+    exec = "cscope", -- "cscope" or "gtags-cscope"
+    -- choose your fav picker
+    picker = "telescope", -- "telescope", "fzf-lua" or "quickfix"
+    -- size of quickfix window
+    qf_window_size = 5, -- any positive integer
+    -- position of quickfix window
+    qf_window_pos = "bottom", -- "bottom", "right", "left" or "top"
+    -- "true" does not open picker for single result, just JUMP
+    skip_picker_for_single_result = false, -- "false" or "true"
+    -- these args are directly passed to "cscope -f <db_file> <args>"
+    db_build_cmd_args = { "-bqkv" },
+    -- statusline indicator, default is cscope executable
+    statusline_indicator = nil,
+    -- try to locate db_file in parent dir(s)
+    project_rooter = {
+      enable = false, -- "true" or "false"
+      -- change cwd to where db_file is located
+      change_cwd = false, -- "true" or "false"
+    },
+  }
+}
+)
+
 EOF

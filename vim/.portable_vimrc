@@ -17,6 +17,8 @@ set expandtab
 
 set whichwrap+=<,>,h,l
 
+filetype indent plugin on
+syntax on
 
 " Set ruler
 set ruler
