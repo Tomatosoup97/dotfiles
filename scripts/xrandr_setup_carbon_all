@@ -1,0 +1,8 @@
+#!/bin/bash
+
+LAPTOP="eDP-1"
+LEFT="DP-3"
+RIGHT="HDMI-1"
+
+#xrandr --output DP-3-8 --mode 1920x1080 --left-of DP-3-1-8 --output DP-3-1-8 --left-of eDP-1 --mode 1920x1080 --output eDP-1 --mode 1920x1080 --primary
+xrandr --output $LEFT --mode 2560x1440 --left-of $RIGHT --output $RIGHT --left-of $LAPTOP --mode 1920x1080 --output $LAPTOP --mode 1920x1080 --primary
