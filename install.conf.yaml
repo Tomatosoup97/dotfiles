@@ -67,6 +67,9 @@
     ~/.config/redshift.conf:
       force: true
       path: apps/redshift.conf
+    ~/.config/gammastep/config.ini:
+      force: true
+      path: gammastep/config.ini
     ~/.config/nvim/init.vim:
       force: true
       path: vim/init.vim
