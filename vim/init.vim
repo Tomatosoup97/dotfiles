@@ -11,8 +11,8 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'vim-syntastic/syntastic'
-" Plug 'dense-analysis/ale'
+Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mg979/vim-visual-multi'
@@ -36,11 +36,11 @@ Plug 'kabouzeid/nvim-lspinstall'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'arakashic/chromatica.nvim'
 Plug 'windwp/nvim-spectre'
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
-Plug 'github/copilot.vim'
 Plug 'dhananjaylatkar/cscope_maps.nvim'
 Plug 'folke/which-key.nvim'
+Plug 'vivien/vim-linux-coding-style'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -131,12 +131,15 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+autocmd FileType c set softtabstop=8 tabstop=8 shiftwidth=8 noexpandtab
+autocmd BufRead,BufNewFile *.c,*.h set softtabstop=8 tabstop=8 shiftwidth=8 noexpandtab
+
 set whichwrap+=<,>,h,l
 
 
 " Set ruler
 set ruler
-set colorcolumn=89
+set colorcolumn=89,100
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
@@ -185,9 +188,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Set indent based on filetype
-autocmd FileType c,cpp,html set ts=2 sw=2 sts=2
-
 " HIGHLIGHTS
 
 " Show trailing whitespace:
@@ -234,7 +234,7 @@ let g:loaded_perl_provider = 0
 nmap <silent> <C-K> <Plug>(ale_previous_wrap)
 nmap <silent> <C-J> <Plug>(ale_next_wrap)
 
-" " Syntastic settings
+" Syntastic settings
 
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -243,25 +243,25 @@ nmap <silent> <C-J> <Plug>(ale_next_wrap)
 " let g:syntastic_cpp_checkers = ['cpplint']
 " let g:syntastic_cpp_cpplint_exec = '~/Anaconda3/bin/cpplint'
 
-" let g:syntastic_python_checkers = ['flake8', 'mypy']
+let g:syntastic_python_checkers = ['flake8', 'mypy']
 
-" " disabling noisy tex checker
-" let g:syntastic_tex_checkers = []
+" disabling noisy tex checker
+let g:syntastic_tex_checkers = []
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
 
 
-" " Making errors window not too big
-" " https://github.com/vim-syntastic/syntastic/issues/1678
-" function! SyntasticCheckHook(errors)
-"     if !empty(a:errors)
-"         let g:syntastic_loc_list_height = min([len(a:errors), 8])
-"     endif
-" endfunction
+" Making errors window not too big
+" https://github.com/vim-syntastic/syntastic/issues/1678
+function! SyntasticCheckHook(errors)
+    if !empty(a:errors)
+        let g:syntastic_loc_list_height = min([len(a:errors), 8])
+    endif
+endfunction
 
 " Markdown preview
 
@@ -347,6 +347,7 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
+
   },
 })
 
